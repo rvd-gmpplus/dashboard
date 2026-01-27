@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="nl">
+<html lang="en-GB">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -449,13 +449,13 @@
     <div class="header">
         <div class="header-left">
             <h1 id="dashboard-title">GMP+ OGSM Dashboard 2026-2028</h1>
-            <div class="subtitle" id="dashboard-subtitle">Maandelijks Team Meeting Overzicht</div>
+            <div class="subtitle" id="dashboard-subtitle">Monthly Team Meeting Overview</div>
             <div class="last-updated" id="last-updated"></div>
         </div>
         <div class="upload-area" id="header-upload" style="display: none;">
             <div class="upload-icon">📁</div>
-            <div class="upload-text">Sleep CSV hier of klik om te selecteren</div>
-            <div class="upload-hint">Exporteer vanuit Excel als CSV</div>
+            <div class="upload-text">Drag CSV here or click to select</div>
+            <div class="upload-hint">Export from Excel as CSV</div>
         </div>
     </div>
 
@@ -464,14 +464,14 @@
     <div id="main-content">
         <!-- Welcome state shown initially -->
         <div class="welcome-state" id="welcome-state">
-            <h2>👋 Welkom bij het OGSM Dashboard</h2>
-            <p>Upload je KPI data om het dashboard te tonen.<br>
-            Gebruik het Excel-template en exporteer als CSV.</p>
+            <h2>👋 Welcome to the OGSM Dashboard</h2>
+            <p>Upload your KPI data to display the dashboard.<br>
+            Use the Excel template and export as CSV.</p>
             
             <div class="welcome-upload" id="welcome-upload">
                 <div class="welcome-upload-icon">📊</div>
-                <div class="upload-text"><strong>Sleep je CSV-bestand hier</strong></div>
-                <div class="upload-hint" style="margin-top: 8px;">of klik om een bestand te selecteren</div>
+                <div class="upload-text"><strong>Drag your CSV file here</strong></div>
+                <div class="upload-hint" style="margin-top: 8px;">or click to select a file</div>
             </div>
 
             <button class="btn-download-template" id="download-template">
@@ -486,15 +486,15 @@
     <div class="legend" id="legend" style="display: none;">
         <div class="legend-item">
             <div class="legend-color green"></div>
-            <span>Op schema (≥80% van doel)</span>
+            <span>On track (≥80% of target)</span>
         </div>
         <div class="legend-item">
             <div class="legend-color orange"></div>
-            <span>Aandacht nodig (50-80%)</span>
+            <span>Attention needed (50-80%)</span>
         </div>
         <div class="legend-item">
             <div class="legend-color red"></div>
-            <span>Achter op schema (&lt;50%)</span>
+            <span>Behind schedule (&lt;50%)</span>
         </div>
     </div>
 
@@ -510,14 +510,14 @@
     // ============================================================
     
     const CSV_TEMPLATE = `id,name,description,category,currentValue,targetValue,unit,type,trend
-data-accuracy,Data Accuracy,Percentage correcte data in onze systemen,Tech & Data,72,90,%,percentage,up
-automated-data-entry,Geautomatiseerde Data Entry,Percentage data dat automatisch wordt ingevoerd,Tech & Data,18,33,%,percentage,up
-cb-satisfaction,CB Tevredenheid,Certification Body tevredenheid over gebruiksgemak,Tech & Data,3.8,4.0,/5,rating,stable
-employee-satisfaction,Medewerker Tevredenheid,Medewerker tevredenheid over IT gebruiksgemak,Tech & Data,3.6,4.0,/5,rating,up
-ai-helpdesk,AI Helpdesk Automatisering,Percentage helpdesk cases afgehandeld door AI,Tech & Data,2,10,%,percentage,up
-fsa-certificates,FSA Certificaten Groei,Groei in FSA certificaten t.o.v. december 2024,Markets,1250,4071,,number,up
-fra-certificates,FRA Certificaten Groei,Groei in FRA certificaten t.o.v. december 2024,Sustainability,620,1850,,number,up
-engagement-score,Engagement Score,Medewerker betrokkenheid via engagement scan,Culture,3.9,4.0,/5,rating,stable`;
+data-accuracy,Data Accuracy,Percentage of correct data in our systems,Tech & Data,72,90,%,percentage,up
+automated-data-entry,Automated Data Entry,Percentage of data entered automatically,Tech & Data,18,33,%,percentage,up
+cb-satisfaction,CB Satisfaction,Certification Body satisfaction with ease of use,Tech & Data,3.8,4.0,/5,rating,stable
+employee-satisfaction,Employee Satisfaction,Employee satisfaction with IT ease of use,Tech & Data,3.6,4.0,/5,rating,up
+ai-helpdesk,AI Helpdesk Automation,Percentage of helpdesk cases handled by AI,Tech & Data,2,10,%,percentage,up
+fsa-certificates,FSA Certificates Growth,Growth in FSA certificates compared to December 2024,Markets,1250,4071,,number,up
+fra-certificates,FRA Certificates Growth,Growth in FRA certificates compared to December 2024,Sustainability,620,1850,,number,up
+engagement-score,Engagement Score,Employee engagement via engagement survey,Culture,3.9,4.0,/5,rating,stable`;
 
     // ============================================================
     // CONFIGURATION
@@ -601,7 +601,7 @@ engagement-score,Engagement Score,Medewerker betrokkenheid via engagement scan,C
     function handleFile(file) {
         // Check file type
         if (!file.name.toLowerCase().endsWith('.csv')) {
-            showError('⚠️ Alleen CSV-bestanden worden ondersteund. Exporteer je Excel-bestand als CSV.');
+            showError('⚠️ Only CSV files are supported. Export your Excel file as CSV.');
             return;
         }
 
@@ -612,7 +612,7 @@ engagement-score,Engagement Score,Medewerker betrokkenheid via engagement scan,C
                 const kpis = parseCSV(csvData);
                 
                 if (kpis.length === 0) {
-                    showError('⚠️ Geen geldige KPI data gevonden in het CSV-bestand.');
+                    showError('⚠️ No valid KPI data found in the CSV file.');
                     return;
                 }
 
@@ -624,7 +624,7 @@ engagement-score,Engagement Score,Medewerker betrokkenheid via engagement scan,C
                 headerUpload.classList.add('file-loaded');
                 
             } catch (error) {
-                showError('⚠️ Fout bij het lezen van het CSV-bestand: ' + error.message);
+                showError('⚠️ Error reading the CSV file: ' + error.message);
             }
         };
         reader.readAsText(file);
@@ -637,7 +637,7 @@ engagement-score,Engagement Score,Medewerker betrokkenheid via engagement scan,C
     function parseCSV(csvText) {
         const lines = csvText.trim().split('\n');
         if (lines.length < 2) {
-            throw new Error('CSV moet minimaal een header en één datarij bevatten.');
+            throw new Error('CSV must contain at least a header and one data row.');
         }
 
         // Parse header
@@ -647,7 +647,7 @@ engagement-score,Engagement Score,Medewerker betrokkenheid via engagement scan,C
         const requiredColumns = ['id', 'name', 'currentValue', 'targetValue'];
         for (const col of requiredColumns) {
             if (!headers.includes(col)) {
-                throw new Error(`Verplichte kolom "${col}" ontbreekt.`);
+                throw new Error(`Required column "${col}" is missing.`);
             }
         }
 
@@ -674,7 +674,7 @@ engagement-score,Engagement Score,Medewerker betrokkenheid via engagement scan,C
 
             // Set defaults for optional fields
             kpi.description = kpi.description || '';
-            kpi.category = kpi.category || 'Algemeen';
+            kpi.category = kpi.category || 'General';
             kpi.unit = kpi.unit || '';
             kpi.type = kpi.type || 'percentage';
             kpi.trend = kpi.trend || 'stable';
@@ -721,10 +721,10 @@ engagement-score,Engagement Score,Medewerker betrokkenheid via engagement scan,C
     function renderDashboard(kpis) {
         // Update last updated
         const now = new Date();
-        const months = ['januari', 'februari', 'maart', 'april', 'mei', 'juni', 
-                       'juli', 'augustus', 'september', 'oktober', 'november', 'december'];
-        document.getElementById('last-updated').textContent = 
-            `Laatste update: ${now.getDate()} ${months[now.getMonth()]} ${now.getFullYear()}`;
+        const months = ['January', 'February', 'March', 'April', 'May', 'June',
+                       'July', 'August', 'September', 'October', 'November', 'December'];
+        document.getElementById('last-updated').textContent =
+            `Last updated: ${now.getDate()} ${months[now.getMonth()]} ${now.getFullYear()}`;
 
         // Render KPI cards
         kpiGrid.innerHTML = '';
@@ -780,7 +780,7 @@ engagement-score,Engagement Score,Medewerker betrokkenheid via engagement scan,C
 
             <div class="progress-info">
                 <div class="target-label">
-                    Doel 2028: <span class="target-value">${targetDisplay}${escapeHtml(kpi.unit)}</span>
+                    Target 2028: <span class="target-value">${targetDisplay}${escapeHtml(kpi.unit)}</span>
                 </div>
                 <div class="trend ${kpi.trend}">
                     <span class="trend-icon">${trendIcon}</span>
@@ -822,7 +822,7 @@ engagement-score,Engagement Score,Medewerker betrokkenheid via engagement scan,C
             return Math.round(value);
         }
         if (type === 'number') {
-            return Number(value).toLocaleString('nl-NL');
+            return Number(value).toLocaleString('en-GB');
         }
         return value;
     }
@@ -837,9 +837,9 @@ engagement-score,Engagement Score,Medewerker betrokkenheid via engagement scan,C
 
     function getTrendText(trend) {
         switch (trend) {
-            case 'up': return 'Stijgend';
-            case 'down': return 'Dalend';
-            default: return 'Stabiel';
+            case 'up': return 'Rising';
+            case 'down': return 'Falling';
+            default: return 'Stable';
         }
     }
 
