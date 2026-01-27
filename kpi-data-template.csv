@@ -1,0 +1,9 @@
+id,name,description,category,currentValue,targetValue,unit,type,trend
+data-accuracy,Data Accuracy,Percentage correcte data in onze systemen,Tech & Data,72,90,%,percentage,up
+automated-data-entry,Geautomatiseerde Data Entry,Percentage data dat automatisch wordt ingevoerd,Tech & Data,18,33,%,percentage,up
+cb-satisfaction,CB Tevredenheid,Certification Body tevredenheid over gebruiksgemak,Tech & Data,3.8,4.0,/5,rating,stable
+employee-satisfaction,Medewerker Tevredenheid,Medewerker tevredenheid over IT gebruiksgemak,Tech & Data,3.6,4.0,/5,rating,up
+ai-helpdesk,AI Helpdesk Automatisering,Percentage helpdesk cases afgehandeld door AI,Tech & Data,2,10,%,percentage,up
+fsa-certificates,FSA Certificaten Groei,Groei in FSA certificaten t.o.v. december 2024,Markets,1250,4071,,number,up
+fra-certificates,FRA Certificaten Groei,Groei in FRA certificaten t.o.v. december 2024,Sustainability,620,1850,,number,up
+engagement-score,Engagement Score,Medewerker betrokkenheid via engagement scan,Culture,3.9,4.0,/5,rating,stable
