@@ -1,0 +1,25 @@
+date,id,name,description,category,currentValue,targetValue,unit,type,trend
+Jan 2025,data-accuracy,Data Accuracy,Percentage of correct data in our systems,Tech & Data,68,90,%,percentage,up
+Jan 2025,automated-data-entry,Automated Data Entry,Percentage of data entered automatically,Tech & Data,15,33,%,percentage,up
+Jan 2025,cb-satisfaction,CB Satisfaction,Certification Body satisfaction with ease of use,Tech & Data,3.6,4.0,/5,rating,stable
+Jan 2025,employee-satisfaction,Employee Satisfaction,Employee satisfaction with IT ease of use,Tech & Data,3.4,4.0,/5,rating,up
+Jan 2025,ai-helpdesk,AI Helpdesk Automation,Percentage of helpdesk cases handled by AI,Tech & Data,1,10,%,percentage,up
+Jan 2025,fsa-certificates,FSA Certificates Growth,Growth in FSA certificates compared to December 2024,Markets,800,4071,,number,up
+Jan 2025,fra-certificates,FRA Certificates Growth,Growth in FRA certificates compared to December 2024,Sustainability,400,1850,,number,up
+Jan 2025,engagement-score,Engagement Score,Employee engagement via engagement survey,Culture,3.7,4.0,/5,rating,stable
+Feb 2025,data-accuracy,Data Accuracy,Percentage of correct data in our systems,Tech & Data,70,90,%,percentage,up
+Feb 2025,automated-data-entry,Automated Data Entry,Percentage of data entered automatically,Tech & Data,17,33,%,percentage,up
+Feb 2025,cb-satisfaction,CB Satisfaction,Certification Body satisfaction with ease of use,Tech & Data,3.7,4.0,/5,rating,up
+Feb 2025,employee-satisfaction,Employee Satisfaction,Employee satisfaction with IT ease of use,Tech & Data,3.5,4.0,/5,rating,up
+Feb 2025,ai-helpdesk,AI Helpdesk Automation,Percentage of helpdesk cases handled by AI,Tech & Data,2,10,%,percentage,up
+Feb 2025,fsa-certificates,FSA Certificates Growth,Growth in FSA certificates compared to December 2024,Markets,950,4071,,number,up
+Feb 2025,fra-certificates,FRA Certificates Growth,Growth in FRA certificates compared to December 2024,Sustainability,480,1850,,number,up
+Feb 2025,engagement-score,Engagement Score,Employee engagement via engagement survey,Culture,3.8,4.0,/5,rating,up
+Mar 2025,data-accuracy,Data Accuracy,Percentage of correct data in our systems,Tech & Data,72,90,%,percentage,up
+Mar 2025,automated-data-entry,Automated Data Entry,Percentage of data entered automatically,Tech & Data,18,33,%,percentage,up
+Mar 2025,cb-satisfaction,CB Satisfaction,Certification Body satisfaction with ease of use,Tech & Data,3.8,4.0,/5,rating,stable
+Mar 2025,employee-satisfaction,Employee Satisfaction,Employee satisfaction with IT ease of use,Tech & Data,3.6,4.0,/5,rating,up
+Mar 2025,ai-helpdesk,AI Helpdesk Automation,Percentage of helpdesk cases handled by AI,Tech & Data,2,10,%,percentage,stable
+Mar 2025,fsa-certificates,FSA Certificates Growth,Growth in FSA certificates compared to December 2024,Markets,1250,4071,,number,up
+Mar 2025,fra-certificates,FRA Certificates Growth,Growth in FRA certificates compared to December 2024,Sustainability,620,1850,,number,up
+Mar 2025,engagement-score,Engagement Score,Employee engagement via engagement survey,Culture,3.9,4.0,/5,rating,up
