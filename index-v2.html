@@ -28,112 +28,115 @@
             box-sizing: border-box;
         }
 
+        html, body {
+            height: 100%;
+            overflow: hidden;
+        }
+
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background: linear-gradient(135deg, var(--gray-light) 0%, var(--white) 100%);
-            min-height: 100vh;
-            padding: 20px;
-        }
-
-        /* Version Switcher */
-        .version-switcher {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            z-index: 1000;
+            padding: 12px;
             display: flex;
-            align-items: center;
-            gap: 10px;
-            background: var(--white);
-            padding: 8px 16px;
-            border-radius: 8px;
-            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
-        }
-
-        .version-switcher label {
-            font-size: 0.85rem;
-            font-weight: 600;
-            color: var(--gray-dark);
-        }
-
-        .version-switcher select {
-            padding: 6px 12px;
-            border: 2px solid var(--gmp-purple);
-            border-radius: 6px;
-            background: var(--white);
-            color: var(--gmp-purple);
-            font-weight: 600;
-            cursor: pointer;
-            font-size: 0.9rem;
-        }
-
-        .version-switcher select:hover {
-            background: rgba(104, 89, 167, 0.1);
+            flex-direction: column;
         }
 
         /* Header */
         .header {
             background: linear-gradient(135deg, var(--gmp-purple) 0%, var(--gmp-purple-dark) 100%);
             color: var(--white);
-            padding: 30px 40px;
-            border-radius: 16px;
-            margin-bottom: 20px;
+            padding: 12px 20px;
+            border-radius: 12px;
+            margin-bottom: 12px;
             box-shadow: 0 4px 20px rgba(104, 89, 167, 0.3);
             display: flex;
             justify-content: space-between;
             align-items: center;
             flex-wrap: wrap;
+            gap: 12px;
+            flex-shrink: 0;
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
             gap: 20px;
+            flex-wrap: wrap;
         }
 
         .header-left h1 {
-            font-size: 2rem;
+            font-size: 1.4rem;
             font-weight: 600;
-            margin-bottom: 8px;
         }
 
-        .header-left .subtitle {
-            font-size: 1.1rem;
+        /* Version Switcher - Integrated in header */
+        .version-switcher {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.15);
+            padding: 6px 12px;
+            border-radius: 6px;
+        }
+
+        .version-switcher label {
+            font-size: 0.8rem;
+            font-weight: 500;
             opacity: 0.9;
         }
 
-        .header-left .last-updated {
-            font-size: 0.9rem;
-            opacity: 0.7;
-            margin-top: 10px;
+        .version-switcher select {
+            padding: 4px 8px;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            border-radius: 4px;
+            background: rgba(255, 255, 255, 0.2);
+            color: var(--white);
+            font-weight: 600;
+            cursor: pointer;
+            font-size: 0.85rem;
+        }
+
+        .version-switcher select option {
+            color: var(--gmp-purple-dark);
+            background: var(--white);
+        }
+
+        .version-switcher select:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .header-info {
+            text-align: right;
+            font-size: 0.8rem;
+            opacity: 0.85;
         }
 
         /* Upload Area in Header */
         .upload-area {
             background: rgba(255, 255, 255, 0.15);
             border: 2px dashed rgba(255, 255, 255, 0.5);
-            border-radius: 12px;
-            padding: 20px 30px;
+            border-radius: 8px;
+            padding: 10px 16px;
             text-align: center;
             cursor: pointer;
             transition: all 0.3s ease;
-            min-width: 280px;
+            font-size: 0.8rem;
         }
 
         .upload-area:hover, .upload-area.dragover {
             background: rgba(255, 255, 255, 0.25);
             border-color: var(--gmp-green);
-            transform: scale(1.02);
         }
 
         .upload-icon {
-            font-size: 2rem;
-            margin-bottom: 8px;
-        }
-
-        .upload-text {
-            font-size: 0.95rem;
-            margin-bottom: 4px;
-        }
-
-        .upload-hint {
-            font-size: 0.8rem;
-            opacity: 0.7;
+            font-size: 1.2rem;
+            margin-right: 8px;
         }
 
         #file-input {
@@ -143,11 +146,12 @@
         /* Date Slider Container */
         .date-slider-container {
             background: var(--white);
-            border-radius: 12px;
-            padding: 20px 30px;
-            margin-bottom: 30px;
-            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+            border-radius: 8px;
+            padding: 10px 20px;
+            margin-bottom: 12px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
             display: none;
+            flex-shrink: 0;
         }
 
         .date-slider-container.show {
@@ -158,28 +162,28 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 15px;
+            margin-bottom: 8px;
         }
 
         .date-slider-title {
-            font-size: 1rem;
+            font-size: 0.85rem;
             font-weight: 600;
             color: var(--gmp-purple);
         }
 
         .current-date-display {
-            font-size: 1.2rem;
+            font-size: 1rem;
             font-weight: 700;
             color: var(--gmp-purple-dark);
             background: rgba(104, 89, 167, 0.1);
-            padding: 8px 20px;
-            border-radius: 8px;
+            padding: 4px 12px;
+            border-radius: 6px;
         }
 
         .date-slider {
             width: 100%;
-            height: 8px;
-            border-radius: 4px;
+            height: 6px;
+            border-radius: 3px;
             background: var(--gray-medium);
             outline: none;
             -webkit-appearance: none;
@@ -190,72 +194,80 @@
         .date-slider::-webkit-slider-thumb {
             -webkit-appearance: none;
             appearance: none;
-            width: 24px;
-            height: 24px;
+            width: 18px;
+            height: 18px;
             border-radius: 50%;
             background: var(--gmp-purple);
             cursor: pointer;
-            box-shadow: 0 2px 8px rgba(104, 89, 167, 0.4);
-            transition: transform 0.2s;
-        }
-
-        .date-slider::-webkit-slider-thumb:hover {
-            transform: scale(1.1);
+            box-shadow: 0 2px 6px rgba(104, 89, 167, 0.4);
         }
 
         .date-slider::-moz-range-thumb {
-            width: 24px;
-            height: 24px;
+            width: 18px;
+            height: 18px;
             border-radius: 50%;
             background: var(--gmp-purple);
             cursor: pointer;
             border: none;
-            box-shadow: 0 2px 8px rgba(104, 89, 167, 0.4);
         }
 
         .date-labels {
             display: flex;
             justify-content: space-between;
-            margin-top: 10px;
-            font-size: 0.8rem;
+            margin-top: 6px;
+            font-size: 0.7rem;
             color: var(--gray-dark);
+        }
+
+        /* Main Content Area */
+        .main-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            min-height: 0;
+            overflow: auto;
+        }
+
+        /* Dashboard Content */
+        #dashboard-content {
+            flex: 1;
+            display: none;
+            flex-direction: column;
+            gap: 12px;
+            min-height: 0;
+        }
+
+        #dashboard-content.show {
+            display: flex;
         }
 
         /* Dashboard Sections */
         .dashboard-section {
-            max-width: 1400px;
-            margin: 0 auto 30px;
+            flex-shrink: 0;
         }
 
         .section-title {
-            font-size: 1.2rem;
+            font-size: 0.9rem;
             font-weight: 600;
             color: var(--gmp-purple-dark);
-            margin-bottom: 20px;
-            padding-bottom: 10px;
+            margin-bottom: 10px;
+            padding-bottom: 6px;
             border-bottom: 2px solid var(--gmp-purple-light);
         }
 
-        /* Donut Grid - 3 columns for 6 KPIs */
+        /* Donut Grid - Compact 6-column layout */
         .donut-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 24px;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 12px;
         }
 
-        /* Charts Grid - 2 columns for FSA and FRA */
-        .charts-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 24px;
-        }
-
-        /* KPI Card */
+        /* Compact KPI Card */
         .kpi-card {
             background: var(--white);
-            border-radius: 16px;
-            padding: 24px;
-            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+            border-radius: 10px;
+            padding: 12px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
             transition: transform 0.2s ease, box-shadow 0.2s ease;
             display: flex;
             flex-direction: column;
@@ -263,39 +275,40 @@
         }
 
         .kpi-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         }
 
         .kpi-category {
-            font-size: 0.75rem;
+            font-size: 0.6rem;
             font-weight: 600;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
+            letter-spacing: 0.3px;
             color: var(--gmp-purple);
             background: rgba(104, 89, 167, 0.1);
-            padding: 4px 12px;
-            border-radius: 20px;
-            margin-bottom: 16px;
+            padding: 2px 8px;
+            border-radius: 10px;
+            margin-bottom: 6px;
         }
 
         .kpi-name {
-            font-size: 1rem;
+            font-size: 0.75rem;
             font-weight: 600;
             color: var(--gray-dark);
             text-align: center;
-            margin-bottom: 20px;
-            min-height: 48px;
+            margin-bottom: 8px;
+            min-height: 28px;
             display: flex;
             align-items: center;
+            line-height: 1.2;
         }
 
-        /* Donut Chart */
+        /* Compact Donut Chart */
         .donut-container {
             position: relative;
-            width: 140px;
-            height: 140px;
-            margin-bottom: 20px;
+            width: 70px;
+            height: 70px;
+            margin-bottom: 8px;
         }
 
         .donut-chart {
@@ -307,12 +320,12 @@
         .donut-ring {
             fill: none;
             stroke: var(--gray-medium);
-            stroke-width: 12;
+            stroke-width: 8;
         }
 
         .donut-segment {
             fill: none;
-            stroke-width: 12;
+            stroke-width: 8;
             stroke-linecap: round;
             transition: stroke-dasharray 0.5s ease-out;
         }
@@ -326,26 +339,25 @@
         }
 
         .donut-value {
-            font-size: 1.6rem;
+            font-size: 0.95rem;
             font-weight: 700;
             color: var(--gmp-purple-dark);
         }
 
         .donut-unit {
-            font-size: 0.85rem;
+            font-size: 0.6rem;
             color: var(--gray-dark);
         }
 
-        /* Progress Info */
+        /* Compact Progress Info */
         .progress-info {
             width: 100%;
             text-align: center;
         }
 
         .target-label {
-            font-size: 0.85rem;
+            font-size: 0.65rem;
             color: var(--gray-dark);
-            margin-bottom: 8px;
         }
 
         .target-value {
@@ -353,15 +365,15 @@
             color: var(--gmp-purple);
         }
 
-        /* Trend Indicator */
+        /* Compact Trend Indicator */
         .trend {
             display: inline-flex;
             align-items: center;
-            gap: 4px;
-            font-size: 0.85rem;
-            padding: 4px 10px;
-            border-radius: 12px;
-            margin-top: 12px;
+            gap: 2px;
+            font-size: 0.65rem;
+            padding: 2px 6px;
+            border-radius: 8px;
+            margin-top: 4px;
         }
 
         .trend.up {
@@ -384,19 +396,26 @@
         .status-orange { stroke: var(--orange); }
         .status-red { stroke: var(--red); }
 
-        /* Line Chart Card */
+        /* Charts Grid - 2 columns */
+        .charts-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+        }
+
+        /* Redesigned Chart Card with Yearly Milestones */
         .chart-card {
             background: var(--white);
-            border-radius: 16px;
-            padding: 24px;
-            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+            border-radius: 10px;
+            padding: 14px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
         }
 
         .chart-header {
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
-            margin-bottom: 20px;
+            margin-bottom: 12px;
         }
 
         .chart-title-section {
@@ -404,14 +423,14 @@
         }
 
         .chart-title {
-            font-size: 1.1rem;
+            font-size: 0.9rem;
             font-weight: 600;
             color: var(--gray-dark);
-            margin-bottom: 4px;
+            margin-bottom: 2px;
         }
 
         .chart-subtitle {
-            font-size: 0.85rem;
+            font-size: 0.7rem;
             color: var(--gray-dark);
             opacity: 0.7;
         }
@@ -421,13 +440,13 @@
         }
 
         .chart-current {
-            font-size: 1.8rem;
+            font-size: 1.4rem;
             font-weight: 700;
             color: var(--gmp-purple-dark);
         }
 
         .chart-target {
-            font-size: 0.9rem;
+            font-size: 0.75rem;
             color: var(--gray-dark);
         }
 
@@ -436,133 +455,160 @@
             color: var(--gmp-green-dark);
         }
 
-        /* SVG Line Chart */
-        .line-chart-container {
-            width: 100%;
-            height: 200px;
-            position: relative;
-        }
-
-        .line-chart {
-            width: 100%;
-            height: 100%;
-        }
-
-        .chart-grid-line {
-            stroke: var(--gray-medium);
-            stroke-width: 1;
-            stroke-dasharray: 4 4;
-        }
-
-        .chart-axis {
-            stroke: var(--gray-dark);
-            stroke-width: 1;
-        }
-
-        .chart-line {
-            fill: none;
-            stroke-width: 3;
-            stroke-linecap: round;
-            stroke-linejoin: round;
-        }
-
-        .chart-line.actual {
-            stroke: var(--gmp-purple);
-        }
-
-        .chart-line.target {
-            stroke: var(--gmp-green);
-            stroke-dasharray: 8 4;
-            stroke-width: 2;
-        }
-
-        .chart-point {
-            fill: var(--white);
-            stroke-width: 3;
-        }
-
-        .chart-point.actual {
-            stroke: var(--gmp-purple);
-        }
-
-        .chart-point.current {
-            fill: var(--gmp-purple);
-            stroke: var(--white);
-            stroke-width: 3;
-        }
-
-        .chart-area {
-            fill: rgba(104, 89, 167, 0.1);
-        }
-
-        .chart-label {
-            font-size: 10px;
-            fill: var(--gray-dark);
-        }
-
-        .chart-legend {
+        /* Yearly Progress Bar Chart */
+        .yearly-progress-container {
             display: flex;
-            justify-content: center;
-            gap: 24px;
-            margin-top: 16px;
+            flex-direction: column;
+            gap: 8px;
         }
 
-        .legend-item {
+        .year-row {
             display: flex;
             align-items: center;
-            gap: 8px;
-            font-size: 0.85rem;
-            color: var(--gray-dark);
+            gap: 10px;
         }
 
-        .legend-line {
-            width: 24px;
-            height: 3px;
+        .year-label {
+            width: 35px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--gray-dark);
+            flex-shrink: 0;
+        }
+
+        .year-bar-container {
+            flex: 1;
+            height: 24px;
+            background: var(--gray-light);
+            border-radius: 6px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .year-bar-target {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            background: rgba(141, 198, 63, 0.2);
+            border-radius: 6px;
+        }
+
+        .year-bar-actual {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            background: var(--gmp-purple);
+            border-radius: 6px;
+            transition: width 0.5s ease-out;
+        }
+
+        .year-bar-actual.exceeded {
+            background: var(--gmp-green);
+        }
+
+        .year-bar-actual.behind {
+            background: var(--orange);
+        }
+
+        .year-bar-actual.far-behind {
+            background: var(--red);
+        }
+
+        .year-target-marker {
+            position: absolute;
+            top: 0;
+            height: 100%;
+            width: 3px;
+            background: var(--gmp-green-dark);
             border-radius: 2px;
         }
 
-        .legend-line.actual {
-            background: var(--gmp-purple);
+        .year-target-marker::after {
+            content: attr(data-target);
+            position: absolute;
+            top: -16px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 0.6rem;
+            color: var(--gmp-green-dark);
+            font-weight: 600;
+            white-space: nowrap;
         }
 
-        .legend-line.target {
+        .year-values {
+            width: 90px;
+            text-align: right;
+            font-size: 0.7rem;
+            flex-shrink: 0;
+        }
+
+        .year-actual-value {
+            font-weight: 700;
+            color: var(--gmp-purple-dark);
+        }
+
+        .year-target-value {
+            color: var(--gray-dark);
+        }
+
+        .year-status {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.7rem;
+            flex-shrink: 0;
+        }
+
+        .year-status.achieved {
             background: var(--gmp-green);
-            background: repeating-linear-gradient(
-                90deg,
-                var(--gmp-green),
-                var(--gmp-green) 6px,
-                transparent 6px,
-                transparent 10px
-            );
+            color: white;
+        }
+
+        .year-status.in-progress {
+            background: var(--orange);
+            color: white;
+        }
+
+        .year-status.pending {
+            background: var(--gray-medium);
+            color: var(--gray-dark);
+        }
+
+        .year-status.behind {
+            background: var(--red);
+            color: white;
         }
 
         /* Legend */
         .legend {
             display: flex;
             justify-content: center;
-            gap: 30px;
-            margin-top: 30px;
-            padding: 20px;
+            gap: 20px;
+            padding: 10px;
             background: var(--white);
-            border-radius: 12px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+            flex-shrink: 0;
+            margin-top: 8px;
         }
 
         .legend .legend-item {
             display: flex;
             align-items: center;
-            gap: 8px;
-            font-size: 0.9rem;
+            gap: 6px;
+            font-size: 0.75rem;
             color: var(--gray-dark);
         }
 
         .legend-color {
-            width: 16px;
-            height: 16px;
-            border-radius: 4px;
+            width: 12px;
+            height: 12px;
+            border-radius: 3px;
         }
 
         .legend-color.green { background: var(--gmp-green); }
@@ -572,31 +618,32 @@
         /* Welcome State */
         .welcome-state {
             text-align: center;
-            padding: 80px 40px;
+            padding: 40px;
             background: var(--white);
-            border-radius: 16px;
+            border-radius: 12px;
             box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
-            max-width: 600px;
-            margin: 0 auto;
+            max-width: 500px;
+            margin: 40px auto;
         }
 
         .welcome-state h2 {
             color: var(--gmp-purple);
-            margin-bottom: 16px;
-            font-size: 1.5rem;
+            margin-bottom: 12px;
+            font-size: 1.3rem;
         }
 
         .welcome-state p {
             color: var(--gray-dark);
-            margin-bottom: 24px;
-            line-height: 1.6;
+            margin-bottom: 20px;
+            line-height: 1.5;
+            font-size: 0.9rem;
         }
 
         .welcome-upload {
             background: var(--gray-light);
             border: 2px dashed var(--gmp-purple);
-            border-radius: 12px;
-            padding: 40px;
+            border-radius: 10px;
+            padding: 30px;
             cursor: pointer;
             transition: all 0.3s ease;
         }
@@ -607,23 +654,23 @@
         }
 
         .welcome-upload-icon {
-            font-size: 3rem;
-            margin-bottom: 16px;
+            font-size: 2.5rem;
+            margin-bottom: 12px;
         }
 
         .btn-download-template {
             display: inline-block;
-            margin-top: 24px;
-            padding: 12px 24px;
+            margin-top: 20px;
+            padding: 10px 20px;
             background: var(--gmp-green);
             color: white;
             text-decoration: none;
-            border-radius: 8px;
+            border-radius: 6px;
             font-weight: 600;
             transition: background 0.2s;
             cursor: pointer;
             border: none;
-            font-size: 1rem;
+            font-size: 0.9rem;
         }
 
         .btn-download-template:hover {
@@ -634,11 +681,12 @@
         .error-message {
             background: rgba(231, 76, 60, 0.1);
             color: var(--red);
-            padding: 16px 24px;
-            border-radius: 8px;
-            margin-bottom: 20px;
+            padding: 12px 20px;
+            border-radius: 6px;
+            margin-bottom: 12px;
             text-align: center;
             display: none;
+            flex-shrink: 0;
         }
 
         .error-message.show {
@@ -648,77 +696,66 @@
         /* Footer */
         .footer {
             text-align: center;
-            margin-top: 40px;
-            padding: 20px;
+            padding: 8px;
             color: var(--gray-dark);
-            font-size: 0.85rem;
+            font-size: 0.75rem;
+            flex-shrink: 0;
         }
 
-        /* Responsive */
-        @media (max-width: 1200px) {
+        /* Responsive adjustments */
+        @media (max-width: 1400px) {
             .donut-grid {
-                grid-template-columns: repeat(2, 1fr);
+                grid-template-columns: repeat(3, 1fr);
             }
         }
 
-        @media (max-width: 900px) {
+        @media (max-width: 1000px) {
+            .donut-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
             .charts-grid {
                 grid-template-columns: 1fr;
             }
         }
 
         @media (max-width: 768px) {
+            html, body {
+                overflow: auto;
+            }
             .header {
                 flex-direction: column;
                 text-align: center;
             }
-
-            .header-left h1 {
-                font-size: 1.5rem;
+            .header-left {
+                flex-direction: column;
             }
-
             .donut-grid {
                 grid-template-columns: 1fr;
             }
-
             .legend {
                 flex-direction: column;
-                gap: 12px;
-            }
-
-            .upload-area {
-                width: 100%;
-            }
-
-            .version-switcher {
-                position: static;
-                margin-bottom: 20px;
-                justify-content: center;
-            }
-
-            .date-slider-header {
-                flex-direction: column;
-                gap: 10px;
+                gap: 8px;
             }
         }
 
         /* Print Styles */
         @media print {
+            html, body {
+                overflow: visible;
+                height: auto;
+            }
             body {
                 background: white;
                 padding: 10px;
             }
-
-            .upload-area, .welcome-state, .btn-download-template, .version-switcher, .date-slider-container {
+            .upload-area, .welcome-state, .btn-download-template, .date-slider-container {
                 display: none !important;
             }
-
             .kpi-card, .chart-card {
                 box-shadow: none;
                 border: 1px solid var(--gray-medium);
                 break-inside: avoid;
             }
-
             .header {
                 background: var(--gmp-purple) !important;
                 -webkit-print-color-adjust: exact;
@@ -734,25 +771,23 @@
     </style>
 </head>
 <body>
-    <!-- Version Switcher -->
-    <div class="version-switcher">
-        <label for="version-select">Version:</label>
-        <select id="version-select" onchange="switchVersion(this.value)">
-            <option value="v1">V1 - Classic</option>
-            <option value="v2" selected>V2 - Historic Data</option>
-        </select>
-    </div>
-
     <div class="header">
         <div class="header-left">
+            <div class="upload-area" id="header-upload" style="display: none;">
+                <span class="upload-icon">📁</span>
+                <span>Upload CSV</span>
+            </div>
+            <div class="version-switcher">
+                <label for="version-select">Version:</label>
+                <select id="version-select" onchange="switchVersion(this.value)">
+                    <option value="v1">V1 - Classic</option>
+                    <option value="v2" selected>V2 - Historic</option>
+                </select>
+            </div>
             <h1 id="dashboard-title">GMP+ OGSM Dashboard 2026-2028</h1>
-            <div class="subtitle" id="dashboard-subtitle">Monthly Team Meeting Overview</div>
-            <div class="last-updated" id="last-updated"></div>
         </div>
-        <div class="upload-area" id="header-upload" style="display: none;">
-            <div class="upload-icon">📁</div>
-            <div class="upload-text">Drag CSV here or click to select</div>
-            <div class="upload-hint">Export from Excel as CSV (with dates)</div>
+        <div class="header-right">
+            <div class="header-info" id="last-updated"></div>
         </div>
     </div>
 
@@ -768,12 +803,12 @@
 
     <div class="error-message" id="error-message"></div>
 
-    <div id="main-content">
+    <div class="main-content" id="main-content">
         <!-- Welcome state shown initially -->
         <div class="welcome-state" id="welcome-state">
             <h2>Welcome to the OGSM Dashboard V2</h2>
             <p>Upload your KPI data with historic dates to display the dashboard.<br>
-            V2 features: date slider, line charts for certificates growth.</p>
+            V2 features: date slider, yearly progress tracking.</p>
 
             <div class="welcome-upload" id="welcome-upload">
                 <div class="welcome-upload-icon">📊</div>
@@ -782,12 +817,12 @@
             </div>
 
             <button class="btn-download-template" id="download-template">
-                Download V2 Template (with dates)
+                Download V2 Template
             </button>
         </div>
 
         <!-- Dashboard content (hidden initially) -->
-        <div id="dashboard-content" style="display: none;">
+        <div id="dashboard-content">
             <!-- Donut Charts Section -->
             <div class="dashboard-section">
                 <h2 class="section-title">Key Performance Indicators</h2>
@@ -799,21 +834,21 @@
                 <h2 class="section-title">Certificates Growth</h2>
                 <div class="charts-grid" id="charts-grid"></div>
             </div>
-        </div>
-    </div>
 
-    <div class="legend" id="legend" style="display: none;">
-        <div class="legend-item">
-            <div class="legend-color green"></div>
-            <span>On track (≥80% of target)</span>
-        </div>
-        <div class="legend-item">
-            <div class="legend-color orange"></div>
-            <span>Attention needed (50-80%)</span>
-        </div>
-        <div class="legend-item">
-            <div class="legend-color red"></div>
-            <span>Behind schedule (&lt;50%)</span>
+            <div class="legend" id="legend">
+                <div class="legend-item">
+                    <div class="legend-color green"></div>
+                    <span>On track (≥80%)</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color orange"></div>
+                    <span>Attention (50-80%)</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color red"></div>
+                    <span>Behind (&lt;50%)</span>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -842,41 +877,47 @@
     // CSV TEMPLATE GENERATOR (V2 with dates)
     // ============================================================
 
-    const CSV_TEMPLATE = `date,id,name,description,category,currentValue,targetValue,unit,type,trend
-Jan 2025,data-accuracy,Data Accuracy,Percentage of correct data in our systems,Tech & Data,68,90,%,percentage,up
-Jan 2025,automated-data-entry,Automated Data Entry,Percentage of data entered automatically,Tech & Data,15,33,%,percentage,up
-Jan 2025,cb-satisfaction,CB Satisfaction,Certification Body satisfaction with ease of use,Tech & Data,3.6,4.0,/5,rating,stable
-Jan 2025,employee-satisfaction,Employee Satisfaction,Employee satisfaction with IT ease of use,Tech & Data,3.4,4.0,/5,rating,up
-Jan 2025,ai-helpdesk,AI Helpdesk Automation,Percentage of helpdesk cases handled by AI,Tech & Data,1,10,%,percentage,up
-Jan 2025,fsa-certificates,FSA Certificates Growth,Growth in FSA certificates compared to December 2024,Markets,800,4071,,number,up
-Jan 2025,fra-certificates,FRA Certificates Growth,Growth in FRA certificates compared to December 2024,Sustainability,400,1850,,number,up
-Jan 2025,engagement-score,Engagement Score,Employee engagement via engagement survey,Culture,3.7,4.0,/5,rating,stable
-Feb 2025,data-accuracy,Data Accuracy,Percentage of correct data in our systems,Tech & Data,70,90,%,percentage,up
-Feb 2025,automated-data-entry,Automated Data Entry,Percentage of data entered automatically,Tech & Data,17,33,%,percentage,up
-Feb 2025,cb-satisfaction,CB Satisfaction,Certification Body satisfaction with ease of use,Tech & Data,3.7,4.0,/5,rating,up
-Feb 2025,employee-satisfaction,Employee Satisfaction,Employee satisfaction with IT ease of use,Tech & Data,3.5,4.0,/5,rating,up
-Feb 2025,ai-helpdesk,AI Helpdesk Automation,Percentage of helpdesk cases handled by AI,Tech & Data,2,10,%,percentage,up
-Feb 2025,fsa-certificates,FSA Certificates Growth,Growth in FSA certificates compared to December 2024,Markets,950,4071,,number,up
-Feb 2025,fra-certificates,FRA Certificates Growth,Growth in FRA certificates compared to December 2024,Sustainability,480,1850,,number,up
-Feb 2025,engagement-score,Engagement Score,Employee engagement via engagement survey,Culture,3.8,4.0,/5,rating,up
-Mar 2025,data-accuracy,Data Accuracy,Percentage of correct data in our systems,Tech & Data,72,90,%,percentage,up
-Mar 2025,automated-data-entry,Automated Data Entry,Percentage of data entered automatically,Tech & Data,18,33,%,percentage,up
-Mar 2025,cb-satisfaction,CB Satisfaction,Certification Body satisfaction with ease of use,Tech & Data,3.8,4.0,/5,rating,stable
-Mar 2025,employee-satisfaction,Employee Satisfaction,Employee satisfaction with IT ease of use,Tech & Data,3.6,4.0,/5,rating,up
-Mar 2025,ai-helpdesk,AI Helpdesk Automation,Percentage of helpdesk cases handled by AI,Tech & Data,2,10,%,percentage,stable
-Mar 2025,fsa-certificates,FSA Certificates Growth,Growth in FSA certificates compared to December 2024,Markets,1250,4071,,number,up
-Mar 2025,fra-certificates,FRA Certificates Growth,Growth in FRA certificates compared to December 2024,Sustainability,620,1850,,number,up
-Mar 2025,engagement-score,Engagement Score,Employee engagement via engagement survey,Culture,3.9,4.0,/5,rating,up`;
+    const CSV_TEMPLATE = `date,id,name,description,category,currentValue,targetValue,target2026,target2027,target2028,unit,type,trend
+Jan 2025,data-accuracy,Data Accuracy,Percentage of correct data in our systems,Tech & Data,68,90,75,82,90,%,percentage,up
+Jan 2025,automated-data-entry,Automated Data Entry,Percentage of data entered automatically,Tech & Data,15,33,20,26,33,%,percentage,up
+Jan 2025,cb-satisfaction,CB Satisfaction,Certification Body satisfaction with ease of use,Tech & Data,3.6,4.0,3.7,3.85,4.0,/5,rating,stable
+Jan 2025,employee-satisfaction,Employee Satisfaction,Employee satisfaction with IT ease of use,Tech & Data,3.4,4.0,3.6,3.8,4.0,/5,rating,up
+Jan 2025,ai-helpdesk,AI Helpdesk Automation,Percentage of helpdesk cases handled by AI,Tech & Data,1,10,3,6,10,%,percentage,up
+Jan 2025,fsa-certificates,FSA Certificates Growth,Growth in FSA certificates compared to December 2024,Markets,800,4071,1357,2714,4071,,number,up
+Jan 2025,fra-certificates,FRA Certificates Growth,Growth in FRA certificates compared to December 2024,Sustainability,400,1850,617,1233,1850,,number,up
+Jan 2025,engagement-score,Engagement Score,Employee engagement via engagement survey,Culture,3.7,4.0,3.8,3.9,4.0,/5,rating,stable
+Feb 2025,data-accuracy,Data Accuracy,Percentage of correct data in our systems,Tech & Data,70,90,75,82,90,%,percentage,up
+Feb 2025,automated-data-entry,Automated Data Entry,Percentage of data entered automatically,Tech & Data,17,33,20,26,33,%,percentage,up
+Feb 2025,cb-satisfaction,CB Satisfaction,Certification Body satisfaction with ease of use,Tech & Data,3.7,4.0,3.7,3.85,4.0,/5,rating,up
+Feb 2025,employee-satisfaction,Employee Satisfaction,Employee satisfaction with IT ease of use,Tech & Data,3.5,4.0,3.6,3.8,4.0,/5,rating,up
+Feb 2025,ai-helpdesk,AI Helpdesk Automation,Percentage of helpdesk cases handled by AI,Tech & Data,2,10,3,6,10,%,percentage,up
+Feb 2025,fsa-certificates,FSA Certificates Growth,Growth in FSA certificates compared to December 2024,Markets,950,4071,1357,2714,4071,,number,up
+Feb 2025,fra-certificates,FRA Certificates Growth,Growth in FRA certificates compared to December 2024,Sustainability,480,1850,617,1233,1850,,number,up
+Feb 2025,engagement-score,Engagement Score,Employee engagement via engagement survey,Culture,3.8,4.0,3.8,3.9,4.0,/5,rating,up
+Mar 2025,data-accuracy,Data Accuracy,Percentage of correct data in our systems,Tech & Data,72,90,75,82,90,%,percentage,up
+Mar 2025,automated-data-entry,Automated Data Entry,Percentage of data entered automatically,Tech & Data,18,33,20,26,33,%,percentage,up
+Mar 2025,cb-satisfaction,CB Satisfaction,Certification Body satisfaction with ease of use,Tech & Data,3.8,4.0,3.7,3.85,4.0,/5,rating,stable
+Mar 2025,employee-satisfaction,Employee Satisfaction,Employee satisfaction with IT ease of use,Tech & Data,3.6,4.0,3.6,3.8,4.0,/5,rating,up
+Mar 2025,ai-helpdesk,AI Helpdesk Automation,Percentage of helpdesk cases handled by AI,Tech & Data,2,10,3,6,10,%,percentage,stable
+Mar 2025,fsa-certificates,FSA Certificates Growth,Growth in FSA certificates compared to December 2024,Markets,1250,4071,1357,2714,4071,,number,up
+Mar 2025,fra-certificates,FRA Certificates Growth,Growth in FRA certificates compared to December 2024,Sustainability,620,1850,617,1233,1850,,number,up
+Mar 2025,engagement-score,Engagement Score,Employee engagement via engagement survey,Culture,3.9,4.0,3.8,3.9,4.0,/5,rating,up`;
 
     // ============================================================
     // CONFIGURATION
     // ============================================================
 
-    const DONUT_RADIUS = 52;
+    const DONUT_RADIUS = 27;
     const DONUT_CIRCUMFERENCE = 2 * Math.PI * DONUT_RADIUS;
 
-    // IDs for line chart KPIs
-    const LINE_CHART_KPIS = ['fsa-certificates', 'fra-certificates'];
+    // IDs for chart KPIs (shown as yearly progress bars)
+    const CHART_KPIS = ['fsa-certificates', 'fra-certificates'];
+
+    // Yearly targets (defaults if not in CSV)
+    const DEFAULT_YEARLY_TARGETS = {
+        'fsa-certificates': { 2026: 1357, 2027: 2714, 2028: 4071 },
+        'fra-certificates': { 2026: 617, 2027: 1233, 2028: 1850 }
+    };
 
     // ============================================================
     // GLOBAL STATE
@@ -1003,7 +1044,6 @@ Mar 2025,engagement-score,Engagement Score,Employee engagement via engagement su
     // ============================================================
 
     function parseDate(dateStr) {
-        // Parse "Jan 2025" format
         const months = {
             'jan': 0, 'feb': 1, 'mar': 2, 'apr': 3, 'may': 4, 'jun': 5,
             'jul': 6, 'aug': 7, 'sep': 8, 'oct': 9, 'nov': 10, 'dec': 11
@@ -1029,8 +1069,6 @@ Mar 2025,engagement-score,Engagement Score,Employee engagement via engagement su
         });
 
         const dates = Array.from(dateSet);
-
-        // Sort dates chronologically
         dates.sort((a, b) => {
             const dateA = parseDate(a);
             const dateB = parseDate(b);
@@ -1053,7 +1091,6 @@ Mar 2025,engagement-score,Engagement Score,Employee engagement via engagement su
         dateSlider.max = availableDates.length - 1;
         dateSlider.value = availableDates.length - 1;
 
-        // Create date labels
         dateLabels.innerHTML = '';
         const step = Math.max(1, Math.floor(availableDates.length / 6));
         for (let i = 0; i < availableDates.length; i += step) {
@@ -1061,7 +1098,6 @@ Mar 2025,engagement-score,Engagement Score,Employee engagement via engagement su
             label.textContent = availableDates[i];
             dateLabels.appendChild(label);
         }
-        // Always show last date
         if ((availableDates.length - 1) % step !== 0) {
             const label = document.createElement('span');
             label.textContent = availableDates[availableDates.length - 1];
@@ -1093,10 +1129,6 @@ Mar 2025,engagement-score,Engagement Score,Employee engagement via engagement su
         }
 
         const headers = parseCSVLine(lines[0]);
-
-        // Check for date column (V2 format)
-        const hasDate = headers.includes('date');
-
         const requiredColumns = ['id', 'name', 'currentValue', 'targetValue'];
         for (const col of requiredColumns) {
             if (!headers.includes(col)) {
@@ -1115,20 +1147,26 @@ Mar 2025,engagement-score,Engagement Score,Employee engagement via engagement su
             headers.forEach((header, index) => {
                 let value = values[index] || '';
 
-                if (['currentValue', 'targetValue'].includes(header)) {
+                if (['currentValue', 'targetValue', 'target2026', 'target2027', 'target2028'].includes(header)) {
                     value = parseFloat(value.replace(',', '.')) || 0;
                 }
 
                 kpi[header] = value;
             });
 
-            // Set defaults
             kpi.date = kpi.date || 'Current';
             kpi.description = kpi.description || '';
             kpi.category = kpi.category || 'General';
             kpi.unit = kpi.unit || '';
             kpi.type = kpi.type || 'percentage';
             kpi.trend = kpi.trend || 'stable';
+
+            // Set default yearly targets if not provided
+            if (CHART_KPIS.includes(kpi.id) && DEFAULT_YEARLY_TARGETS[kpi.id]) {
+                if (!kpi.target2026) kpi.target2026 = DEFAULT_YEARLY_TARGETS[kpi.id][2026];
+                if (!kpi.target2027) kpi.target2027 = DEFAULT_YEARLY_TARGETS[kpi.id][2027];
+                if (!kpi.target2028) kpi.target2028 = DEFAULT_YEARLY_TARGETS[kpi.id][2028];
+            }
 
             kpis.push(kpi);
         }
@@ -1164,29 +1202,21 @@ Mar 2025,engagement-score,Engagement Score,Employee engagement via engagement su
 
     function showDashboard() {
         welcomeState.style.display = 'none';
-        dashboardContent.style.display = 'block';
-        legend.style.display = 'flex';
-        headerUpload.style.display = 'block';
+        dashboardContent.classList.add('show');
+        headerUpload.style.display = 'inline-flex';
     }
 
     function renderDashboard() {
         const selectedDate = availableDates[currentDateIndex];
-
-        // Filter data for selected date
         const currentData = allData.filter(kpi => kpi.date === selectedDate);
 
-        // Separate donut and line chart KPIs
-        const donutKPIs = currentData.filter(kpi => !LINE_CHART_KPIS.includes(kpi.id));
-        const lineChartKPIs = currentData.filter(kpi => LINE_CHART_KPIS.includes(kpi.id));
+        const donutKPIs = currentData.filter(kpi => !CHART_KPIS.includes(kpi.id));
+        const chartKPIs = currentData.filter(kpi => CHART_KPIS.includes(kpi.id));
 
-        // Update last updated
         document.getElementById('last-updated').textContent = `Viewing: ${selectedDate}`;
 
-        // Render donut charts
         renderDonutCharts(donutKPIs);
-
-        // Render line charts
-        renderLineCharts(lineChartKPIs);
+        renderYearlyCharts(chartKPIs);
     }
 
     function renderDonutCharts(kpis) {
@@ -1197,7 +1227,6 @@ Mar 2025,engagement-score,Engagement Score,Employee engagement via engagement su
             donutGrid.appendChild(card);
         });
 
-        // Animate donuts
         setTimeout(() => {
             document.querySelectorAll('.donut-segment').forEach(segment => {
                 const targetDash = segment.getAttribute('data-target-dash');
@@ -1225,10 +1254,10 @@ Mar 2025,engagement-score,Engagement Score,Employee engagement via engagement su
             <div class="kpi-name">${escapeHtml(kpi.name)}</div>
 
             <div class="donut-container">
-                <svg class="donut-chart" viewBox="0 0 140 140">
-                    <circle class="donut-ring" cx="70" cy="70" r="${DONUT_RADIUS}"/>
+                <svg class="donut-chart" viewBox="0 0 70 70">
+                    <circle class="donut-ring" cx="35" cy="35" r="${DONUT_RADIUS}"/>
                     <circle class="donut-segment ${statusClass}"
-                            cx="70" cy="70" r="${DONUT_RADIUS}"
+                            cx="35" cy="35" r="${DONUT_RADIUS}"
                             stroke-dasharray="0 ${DONUT_CIRCUMFERENCE}"
                             data-target-dash="${dashArray}"/>
                 </svg>
@@ -1240,7 +1269,7 @@ Mar 2025,engagement-score,Engagement Score,Employee engagement via engagement su
 
             <div class="progress-info">
                 <div class="target-label">
-                    Target 2028: <span class="target-value">${targetDisplay}${escapeHtml(kpi.unit)}</span>
+                    Target: <span class="target-value">${targetDisplay}${escapeHtml(kpi.unit)}</span>
                 </div>
                 <div class="trend ${kpi.trend}">
                     <span class="trend-icon">${trendIcon}</span>
@@ -1252,38 +1281,105 @@ Mar 2025,engagement-score,Engagement Score,Employee engagement via engagement su
         return card;
     }
 
-    function renderLineCharts(kpis) {
+    function renderYearlyCharts(kpis) {
         chartsGrid.innerHTML = '';
 
         kpis.forEach((kpi) => {
-            const card = createLineChartCard(kpi);
+            const card = createYearlyChartCard(kpi);
             chartsGrid.appendChild(card);
         });
     }
 
-    function createLineChartCard(kpi) {
+    function createYearlyChartCard(kpi) {
         const card = document.createElement('div');
         card.className = 'chart-card';
 
-        // Get all historic data for this KPI
-        const historicData = allData
-            .filter(item => item.id === kpi.id)
-            .sort((a, b) => {
-                const dateA = parseDate(a.date);
-                const dateB = parseDate(b.date);
-                return dateA - dateB;
-            });
-
-        // Filter to only show data up to selected date
-        const selectedDate = availableDates[currentDateIndex];
-        const selectedDateObj = parseDate(selectedDate);
-        const visibleData = historicData.filter(item => {
-            const itemDate = parseDate(item.date);
-            return itemDate <= selectedDateObj;
-        });
-
         const displayValue = formatValue(kpi.currentValue, kpi.type);
         const targetDisplay = formatValue(kpi.targetValue, kpi.type);
+
+        // Get current date to determine which year we're in
+        const selectedDate = availableDates[currentDateIndex];
+        const selectedDateObj = parseDate(selectedDate);
+        const currentYear = selectedDateObj ? selectedDateObj.getFullYear() : 2025;
+
+        // Yearly targets
+        const targets = {
+            2026: kpi.target2026 || Math.round(kpi.targetValue / 3),
+            2027: kpi.target2027 || Math.round(kpi.targetValue * 2 / 3),
+            2028: kpi.target2028 || kpi.targetValue
+        };
+
+        const maxValue = kpi.targetValue * 1.1;
+
+        // Create year rows
+        const years = [2026, 2027, 2028];
+        let yearRowsHtml = '';
+
+        years.forEach(year => {
+            const yearTarget = targets[year];
+            const targetPercent = (yearTarget / maxValue) * 100;
+
+            // Determine if this year has passed, is current, or is future
+            let actualValue = 0;
+            let status = 'pending';
+            let statusIcon = '○';
+
+            if (year < currentYear) {
+                // Past year - show achieved or not
+                actualValue = yearTarget; // Assume target met for past years
+                status = 'achieved';
+                statusIcon = '✓';
+            } else if (year === currentYear) {
+                // Current year - show actual progress
+                actualValue = kpi.currentValue;
+                if (actualValue >= yearTarget) {
+                    status = 'achieved';
+                    statusIcon = '✓';
+                } else if (actualValue >= yearTarget * 0.5) {
+                    status = 'in-progress';
+                    statusIcon = '●';
+                } else {
+                    status = 'behind';
+                    statusIcon = '!';
+                }
+            } else {
+                // Future year
+                actualValue = 0;
+                status = 'pending';
+                statusIcon = '○';
+            }
+
+            const actualPercent = Math.min((actualValue / maxValue) * 100, 100);
+
+            // Bar color class
+            let barClass = '';
+            if (actualValue >= yearTarget) {
+                barClass = 'exceeded';
+            } else if (actualValue >= yearTarget * 0.5) {
+                barClass = 'behind';
+            } else if (actualValue > 0) {
+                barClass = 'far-behind';
+            }
+
+            const actualDisplay = formatValue(actualValue, kpi.type);
+            const targetDisplayYearly = formatValue(yearTarget, kpi.type);
+
+            yearRowsHtml += `
+                <div class="year-row">
+                    <span class="year-label">'${year.toString().slice(-2)}</span>
+                    <div class="year-bar-container">
+                        <div class="year-bar-target" style="width: ${targetPercent}%"></div>
+                        <div class="year-bar-actual ${barClass}" style="width: ${actualPercent}%"></div>
+                        <div class="year-target-marker" style="left: ${targetPercent}%" data-target="${targetDisplayYearly}"></div>
+                    </div>
+                    <div class="year-values">
+                        <span class="year-actual-value">${year <= currentYear ? actualDisplay : '-'}</span>
+                        <span class="year-target-value"> / ${targetDisplayYearly}</span>
+                    </div>
+                    <div class="year-status ${status}">${statusIcon}</div>
+                </div>
+            `;
+        });
 
         card.innerHTML = `
             <div class="chart-header">
@@ -1293,94 +1389,15 @@ Mar 2025,engagement-score,Engagement Score,Employee engagement via engagement su
                 </div>
                 <div class="chart-values">
                     <div class="chart-current">${displayValue}</div>
-                    <div class="chart-target">Target: <span>${targetDisplay}</span></div>
+                    <div class="chart-target">Final Target: <span>${targetDisplay}</span></div>
                 </div>
             </div>
-            <div class="line-chart-container">
-                ${createLineChartSVG(visibleData, kpi.targetValue)}
-            </div>
-            <div class="chart-legend">
-                <div class="legend-item">
-                    <div class="legend-line actual"></div>
-                    <span>Actual</span>
-                </div>
-                <div class="legend-item">
-                    <div class="legend-line target"></div>
-                    <span>Target 2028</span>
-                </div>
+            <div class="yearly-progress-container">
+                ${yearRowsHtml}
             </div>
         `;
 
         return card;
-    }
-
-    function createLineChartSVG(data, targetValue) {
-        if (data.length === 0) return '<svg class="line-chart"></svg>';
-
-        const width = 100;
-        const height = 100;
-        const padding = { top: 10, right: 10, bottom: 20, left: 10 };
-        const chartWidth = width - padding.left - padding.right;
-        const chartHeight = height - padding.top - padding.bottom;
-
-        // Calculate scales
-        const values = data.map(d => d.currentValue);
-        const maxValue = Math.max(...values, targetValue) * 1.1;
-        const minValue = 0;
-
-        const xScale = (index) => padding.left + (index / Math.max(1, data.length - 1)) * chartWidth;
-        const yScale = (value) => padding.top + chartHeight - ((value - minValue) / (maxValue - minValue)) * chartHeight;
-
-        // Create path for line
-        const linePath = data.map((d, i) => {
-            const x = data.length === 1 ? padding.left + chartWidth / 2 : xScale(i);
-            const y = yScale(d.currentValue);
-            return `${i === 0 ? 'M' : 'L'} ${x} ${y}`;
-        }).join(' ');
-
-        // Create area path
-        const firstX = data.length === 1 ? padding.left + chartWidth / 2 : xScale(0);
-        const lastX = data.length === 1 ? padding.left + chartWidth / 2 : xScale(data.length - 1);
-        const areaPath = linePath +
-            ` L ${lastX} ${padding.top + chartHeight}` +
-            ` L ${firstX} ${padding.top + chartHeight} Z`;
-
-        // Target line y position
-        const targetY = yScale(targetValue);
-
-        // Grid lines
-        const gridLines = [0.25, 0.5, 0.75, 1].map(ratio => {
-            const y = padding.top + chartHeight * (1 - ratio);
-            return `<line class="chart-grid-line" x1="${padding.left}" y1="${y}" x2="${width - padding.right}" y2="${y}"/>`;
-        }).join('');
-
-        // Data points
-        const points = data.map((d, i) => {
-            const x = data.length === 1 ? padding.left + chartWidth / 2 : xScale(i);
-            const y = yScale(d.currentValue);
-            const isLast = i === data.length - 1;
-            return `<circle class="chart-point ${isLast ? 'current' : 'actual'}" cx="${x}" cy="${y}" r="${isLast ? 4 : 3}"/>`;
-        }).join('');
-
-        // X-axis labels (first, middle, last)
-        const labels = [];
-        if (data.length > 0) {
-            labels.push(`<text class="chart-label" x="${firstX}" y="${height - 2}" text-anchor="start">${data[0].date}</text>`);
-            if (data.length > 1) {
-                labels.push(`<text class="chart-label" x="${lastX}" y="${height - 2}" text-anchor="end">${data[data.length - 1].date}</text>`);
-            }
-        }
-
-        return `
-            <svg class="line-chart" viewBox="0 0 ${width} ${height}" preserveAspectRatio="none">
-                ${gridLines}
-                <line class="chart-line target" x1="${padding.left}" y1="${targetY}" x2="${width - padding.right}" y2="${targetY}"/>
-                <path class="chart-area" d="${areaPath}"/>
-                <path class="chart-line actual" d="${linePath}"/>
-                ${points}
-                ${labels.join('')}
-            </svg>
-        `;
     }
 
     // ============================================================
