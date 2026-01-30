@@ -1,0 +1,115 @@
+id;date;name;description;category;currentValue;targetValue;unit;type;trend;showTarget;displayType;order;sheet;parentId
+nps-partners;Jan 2026;NPS Partners;Percentage of correct data in our systems;MARKETS;5.9;8;/>8;rating;down;no;donut;100;1;
+nps-partners;Feb 2026;NPS Partners;Percentage of correct data in our systems;MARKETS;6.8;8;/>8;rating;up;no;donut;100;1;
+nps-partners;Mar 2026;NPS Partners;Percentage of correct data in our systems;MARKETS;7.8;8;/>8;rating;up;no;donut;100;1;
+nps-customers;Jan 2026;NPS Customers;Percentage of data entered automatically;MARKETS;6.5;8;/>8;rating;stable;no;donut;200;1;
+nps-customers;Feb 2026;NPS Customers;Percentage of data entered automatically;MARKETS;7.2;8;/>8;rating;up;no;donut;200;1;
+nps-customers;Mar 2026;NPS Customers;Percentage of data entered automatically;MARKETS;7.2;8;/>8;rating;stable;no;donut;200;1;
+employee-satisfaction;Jan 2026;Employee Satisfaction;Employee satisfaction with IT ease of use;CULTURE;2.9;4;/5;rating;up;yes;donut;300;1;
+employee-satisfaction;Feb 2026;Employee Satisfaction;Employee satisfaction with IT ease of use;CULTURE;3.2;4;/5;rating;up;yes;donut;300;1;
+employee-satisfaction;Mar 2026;Employee Satisfaction;Employee satisfaction with IT ease of use;CULTURE;3.7;4;/5;rating;up;yes;donut;300;1;
+revenue;Jan 2026;Revenue;How much money;MONEY;6.8;7.84; mio;number;stable;yes;donut;400;1;
+revenue;Feb 2026;Revenue;How much money;MONEY;6.8;7.84; mio;number;stable;yes;donut;400;1;
+revenue;Mar 2026;Revenue;How much money;MONEY;6.8;7.84; mio;number;stable;yes;donut;400;1;
+yearly-investments;Jan 2026;Yearly investments;;MONEY;0.9;1.5; mio;number;stable;yes;donut;500;1;
+yearly-investments;Feb 2026;Yearly investments;;MONEY;0.9;1.5; mio;number;stable;yes;donut;500;1;
+yearly-investments;Mar 2026;Yearly investments;;MONEY;0.9;1.5; mio;number;stable;yes;donut;500;1;
+gross-profit;Jan 2026;Gross profit;;MONEY;65;76;%;percentage;stable;yes;donut;600;1;
+gross-profit;Feb 2026;Gross profit;;MONEY;65;76;%;percentage;stable;yes;donut;600;1;
+gross-profit;Mar 2026;Gross profit;;MONEY;65;76;%;percentage;stable;yes;donut;600;1;
+liquidity-ratio;Jan 2026;Liquidity Ratio;Current liquidity ratio;Liquidity;7.3;8.5; ton;number;down;yes;line;800;1;
+liquidity-ratio;Feb 2026;Liquidity Ratio;Current liquidity ratio;Liquidity;7.9;8.5; ton;number;up;yes;line;800;1;
+liquidity-ratio;Mar 2026;Liquidity Ratio;Current liquidity ratio;Liquidity;8.9;8.5; ton;number;up;yes;line;800;1;
+fra-certificates;Jan 2026;FRA Certificates Growth;Growth in FRA certificates vs December 2024;Sustainability;225;1850;;number;stable;yes;bar;900;1;
+fra-certificates;Feb 2026;FRA Certificates Growth;Growth in FRA certificates vs December 2024;Sustainability;225;1850;;number;stable;yes;bar;900;1;
+fra-certificates;Mar 2026;FRA Certificates Growth;Growth in FRA certificates vs December 2024;Sustainability;225;1850;;number;stable;yes;bar;900;1;
+fsa-certificates;Jan 2026;FSA Certificates Growth;Growth in FSA certificates vs December 2024;Markets;851;4071;;number;up;yes;bar;1000;1;
+fsa-certificates;Feb 2026;FSA Certificates Growth;Growth in FSA certificates vs December 2024;Markets;851;4071;;number;up;yes;bar;1000;1;
+fsa-certificates;Mar 2026;FSA Certificates Growth;Growth in FSA certificates vs December 2024;Markets;851;4071;;number;up;yes;bar;1000;1;
+data-accuracy-org;Jan 2026;Data Accuracy;Overall data accuracy goal;Organisation;65;100;%;percentage;stable;yes;donut;100;2;
+data-accuracy-org;Feb 2026;Data Accuracy;Overall data accuracy goal;Organisation;70;100;%;percentage;up;yes;donut;100;2;
+data-accuracy-org;Mar 2026;Data Accuracy;Overall data accuracy goal;Organisation;75;100;%;percentage;up;yes;donut;100;2;
+data-accuracy-culture;Jan 2026;Data Accuracy;Cultural data accuracy;Culture;55;100;%;percentage;stable;yes;donut;200;2;
+data-accuracy-culture;Feb 2026;Data Accuracy;Cultural data accuracy;Culture;58;100;%;percentage;up;yes;donut;200;2;
+data-accuracy-culture;Mar 2026;Data Accuracy;Cultural data accuracy;Culture;60;100;%;percentage;up;yes;donut;200;2;
+data-accuracy-feedsafety;Jan 2026;Data Accuracy;Feed safety data accuracy;Feed Safety;70;100;%;percentage;stable;yes;donut;300;2;
+data-accuracy-feedsafety;Feb 2026;Data Accuracy;Feed safety data accuracy;Feed Safety;75;100;%;percentage;up;yes;donut;300;2;
+data-accuracy-feedsafety;Mar 2026;Data Accuracy;Feed safety data accuracy;Feed Safety;80;100;%;percentage;up;yes;donut;300;2;
+automated-data-entry;Jan 2026;Automated Data Entry;Percentage of automated data entry;Sustainability;25;33;%;percentage;stable;yes;donut;400;2;
+automated-data-entry;Feb 2026;Automated Data Entry;Percentage of automated data entry;Sustainability;28;33;%;percentage;up;yes;donut;400;2;
+automated-data-entry;Mar 2026;Automated Data Entry;Percentage of automated data entry;Sustainability;30;33;%;percentage;up;yes;donut;400;2;
+data-accuracy-markets;Jan 2026;Data Accuracy;Markets data accuracy;Markets;50;100;%;percentage;stable;yes;donut;500;2;
+data-accuracy-markets;Feb 2026;Data Accuracy;Markets data accuracy;Markets;52;100;%;percentage;up;yes;donut;500;2;
+data-accuracy-markets;Mar 2026;Data Accuracy;Markets data accuracy;Markets;55;100;%;percentage;up;yes;donut;500;2;
+ai-helpdesk;Jan 2026;AI Helpdesk Automation;Helpdesk automation via AI;Tech & Data;3;10;%;percentage;stable;yes;donut;600;2;
+ai-helpdesk;Feb 2026;AI Helpdesk Automation;Helpdesk automation via AI;Tech & Data;5;10;%;percentage;up;yes;donut;600;2;
+ai-helpdesk;Mar 2026;AI Helpdesk Automation;Helpdesk automation via AI;Tech & Data;7;10;%;percentage;up;yes;donut;600;2;
+org-action-1;Jan 2026;Jobs staffed;90% of jobs are staffed with qualified people;Organisation;75;90;%;percentage;stable;yes;donut;110;2;data-accuracy-org
+org-action-1;Feb 2026;Jobs staffed;90% of jobs are staffed with qualified people;Organisation;80;90;%;percentage;up;yes;donut;110;2;data-accuracy-org
+org-action-1;Mar 2026;Jobs staffed;90% of jobs are staffed with qualified people;Organisation;85;90;%;percentage;up;yes;donut;110;2;data-accuracy-org
+org-action-2;Jan 2026;Capabilities;90% of future-proof capabilities in house;Organisation;60;90;%;percentage;stable;yes;donut;120;2;data-accuracy-org
+org-action-2;Feb 2026;Capabilities;90% of future-proof capabilities in house;Organisation;65;90;%;percentage;up;yes;donut;120;2;data-accuracy-org
+org-action-2;Mar 2026;Capabilities;90% of future-proof capabilities in house;Organisation;70;90;%;percentage;up;yes;donut;120;2;data-accuracy-org
+org-action-3;Jan 2026;Onboarding;Onboarding programme rated minimal 4/5;Organisation;3.2;4;/5;rating;stable;yes;donut;130;2;data-accuracy-org
+org-action-3;Feb 2026;Onboarding;Onboarding programme rated minimal 4/5;Organisation;3.5;4;/5;rating;up;yes;donut;130;2;data-accuracy-org
+org-action-3;Mar 2026;Onboarding;Onboarding programme rated minimal 4/5;Organisation;3.8;4;/5;rating;up;yes;donut;130;2;data-accuracy-org
+org-action-4;Jan 2026;Key processes;80% of key processes implemented and monitored;Organisation;50;80;%;percentage;stable;yes;donut;140;2;data-accuracy-org
+org-action-4;Feb 2026;Key processes;80% of key processes implemented and monitored;Organisation;60;80;%;percentage;up;yes;donut;140;2;data-accuracy-org
+org-action-4;Mar 2026;Key processes;80% of key processes implemented and monitored;Organisation;70;80;%;percentage;up;yes;donut;140;2;data-accuracy-org
+culture-action-1;Jan 2026;Engagement;Engagement scan score minimal 4/5 with 80% participation;Culture;3.0;4;/5;rating;stable;yes;donut;210;2;data-accuracy-culture
+culture-action-1;Feb 2026;Engagement;Engagement scan score minimal 4/5 with 80% participation;Culture;3.2;4;/5;rating;up;yes;donut;210;2;data-accuracy-culture
+culture-action-1;Mar 2026;Engagement;Engagement scan score minimal 4/5 with 80% participation;Culture;3.4;4;/5;rating;up;yes;donut;210;2;data-accuracy-culture
+culture-action-2;Jan 2026;Customer check;98% of Business cases have customer centricity check;Culture;85;98;%;percentage;stable;yes;donut;220;2;data-accuracy-culture
+culture-action-2;Feb 2026;Customer check;98% of Business cases have customer centricity check;Culture;90;98;%;percentage;up;yes;donut;220;2;data-accuracy-culture
+culture-action-2;Mar 2026;Customer check;98% of Business cases have customer centricity check;Culture;92;98;%;percentage;up;yes;donut;220;2;data-accuracy-culture
+feedsafety-action-1;Jan 2026;FSA ease of use;FSA customer satisfaction ease of use: 80% satisfied;Feed Safety;65;80;%;percentage;stable;yes;donut;310;2;data-accuracy-feedsafety
+feedsafety-action-1;Feb 2026;FSA ease of use;FSA customer satisfaction ease of use: 80% satisfied;Feed Safety;70;80;%;percentage;up;yes;donut;310;2;data-accuracy-feedsafety
+feedsafety-action-1;Mar 2026;FSA ease of use;FSA customer satisfaction ease of use: 80% satisfied;Feed Safety;75;80;%;percentage;up;yes;donut;310;2;data-accuracy-feedsafety
+feedsafety-action-2;Jan 2026;FSA quality;FSA customer satisfaction quality: 85% satisfied;Feed Safety;70;85;%;percentage;stable;yes;donut;320;2;data-accuracy-feedsafety
+feedsafety-action-2;Feb 2026;FSA quality;FSA customer satisfaction quality: 85% satisfied;Feed Safety;75;85;%;percentage;up;yes;donut;320;2;data-accuracy-feedsafety
+feedsafety-action-2;Mar 2026;FSA quality;FSA customer satisfaction quality: 85% satisfied;Feed Safety;80;85;%;percentage;up;yes;donut;320;2;data-accuracy-feedsafety
+feedsafety-action-3;Jan 2026;Cost perception;Cost perception customers: 40% satisfied;Feed Safety;25;40;%;percentage;stable;yes;donut;330;2;data-accuracy-feedsafety
+feedsafety-action-3;Feb 2026;Cost perception;Cost perception customers: 40% satisfied;Feed Safety;30;40;%;percentage;up;yes;donut;330;2;data-accuracy-feedsafety
+feedsafety-action-3;Mar 2026;Cost perception;Cost perception customers: 40% satisfied;Feed Safety;35;40;%;percentage;up;yes;donut;330;2;data-accuracy-feedsafety
+feedsafety-action-4;Jan 2026;#1 recommended;FSA and FRA are #1 recommended modules by partners;Feed Safety;60;100;%;percentage;stable;yes;donut;340;2;data-accuracy-feedsafety
+feedsafety-action-4;Feb 2026;#1 recommended;FSA and FRA are #1 recommended modules by partners;Feed Safety;70;100;%;percentage;up;yes;donut;340;2;data-accuracy-feedsafety
+feedsafety-action-4;Mar 2026;#1 recommended;FSA and FRA are #1 recommended modules by partners;Feed Safety;80;100;%;percentage;up;yes;donut;340;2;data-accuracy-feedsafety
+sust-action-1;Jan 2026;FRA certificates;+1,850 FRA certificates (compared to Dec'24);Sustainability;225;1850;;number;stable;yes;donut;410;2;automated-data-entry
+sust-action-1;Feb 2026;FRA certificates;+1,850 FRA certificates (compared to Dec'24);Sustainability;350;1850;;number;up;yes;donut;410;2;automated-data-entry
+sust-action-1;Mar 2026;FRA certificates;+1,850 FRA certificates (compared to Dec'24);Sustainability;500;1850;;number;up;yes;donut;410;2;automated-data-entry
+sust-action-2;Jan 2026;Partnerships;3 partnerships with food producers / retailers;Sustainability;0;3;;number;stable;yes;donut;420;2;automated-data-entry
+sust-action-2;Feb 2026;Partnerships;3 partnerships with food producers / retailers;Sustainability;1;3;;number;up;yes;donut;420;2;automated-data-entry
+sust-action-2;Mar 2026;Partnerships;3 partnerships with food producers / retailers;Sustainability;1;3;;number;stable;yes;donut;420;2;automated-data-entry
+sust-action-3;Jan 2026;FRA ease of use;FRA customer satisfaction ease of use: 75% satisfied;Sustainability;55;75;%;percentage;stable;yes;donut;430;2;automated-data-entry
+sust-action-3;Feb 2026;FRA ease of use;FRA customer satisfaction ease of use: 75% satisfied;Sustainability;60;75;%;percentage;up;yes;donut;430;2;automated-data-entry
+sust-action-3;Mar 2026;FRA ease of use;FRA customer satisfaction ease of use: 75% satisfied;Sustainability;65;75;%;percentage;up;yes;donut;430;2;automated-data-entry
+sust-action-4;Jan 2026;FRA quality;FRA customer satisfaction quality: 80% satisfied;Sustainability;60;80;%;percentage;stable;yes;donut;440;2;automated-data-entry
+sust-action-4;Feb 2026;FRA quality;FRA customer satisfaction quality: 80% satisfied;Sustainability;65;80;%;percentage;up;yes;donut;440;2;automated-data-entry
+sust-action-4;Mar 2026;FRA quality;FRA customer satisfaction quality: 80% satisfied;Sustainability;70;80;%;percentage;up;yes;donut;440;2;automated-data-entry
+sust-action-5;Jan 2026;FRA cost;FRA cost perception customers: 40% satisfied;Sustainability;20;40;%;percentage;stable;yes;donut;450;2;automated-data-entry
+sust-action-5;Feb 2026;FRA cost;FRA cost perception customers: 40% satisfied;Sustainability;25;40;%;percentage;up;yes;donut;450;2;automated-data-entry
+sust-action-5;Mar 2026;FRA cost;FRA cost perception customers: 40% satisfied;Sustainability;30;40;%;percentage;up;yes;donut;450;2;automated-data-entry
+markets-action-1;Jan 2026;FSA certificates;+4,070 FSA certificates (compared to Dec'24);Markets;851;4071;;number;up;yes;donut;510;2;data-accuracy-markets
+markets-action-1;Feb 2026;FSA certificates;+4,070 FSA certificates (compared to Dec'24);Markets;1200;4071;;number;up;yes;donut;510;2;data-accuracy-markets
+markets-action-1;Mar 2026;FSA certificates;+4,070 FSA certificates (compared to Dec'24);Markets;1500;4071;;number;up;yes;donut;510;2;data-accuracy-markets
+markets-action-2;Jan 2026;FSA outflow;Less than 200 companies FSA outflow in North-West EU;Markets;180;200;;number;stable;yes;donut;520;2;data-accuracy-markets
+markets-action-2;Feb 2026;FSA outflow;Less than 200 companies FSA outflow in North-West EU;Markets;170;200;;number;up;yes;donut;520;2;data-accuracy-markets
+markets-action-2;Mar 2026;FSA outflow;Less than 200 companies FSA outflow in North-West EU;Markets;160;200;;number;up;yes;donut;520;2;data-accuracy-markets
+markets-action-3;Jan 2026;Brasil stepwise;+1000 FSA stepwise certificates in Brasil;Markets;100;1000;;number;stable;yes;donut;530;2;data-accuracy-markets
+markets-action-3;Feb 2026;Brasil stepwise;+1000 FSA stepwise certificates in Brasil;Markets;200;1000;;number;up;yes;donut;530;2;data-accuracy-markets
+markets-action-3;Mar 2026;Brasil stepwise;+1000 FSA stepwise certificates in Brasil;Markets;350;1000;;number;up;yes;donut;530;2;data-accuracy-markets
+markets-action-4;Jan 2026;Asia stepwise;+500 FSA stepwise certificates in Asia;Markets;50;500;;number;stable;yes;donut;540;2;data-accuracy-markets
+markets-action-4;Feb 2026;Asia stepwise;+500 FSA stepwise certificates in Asia;Markets;100;500;;number;up;yes;donut;540;2;data-accuracy-markets
+markets-action-4;Mar 2026;Asia stepwise;+500 FSA stepwise certificates in Asia;Markets;150;500;;number;up;yes;donut;540;2;data-accuracy-markets
+tech-action-1;Jan 2026;Data accuracy;At least 90% data accuracy and 33% automated data entry;Tech & Data;70;90;%;percentage;stable;yes;donut;610;2;ai-helpdesk
+tech-action-1;Feb 2026;Data accuracy;At least 90% data accuracy and 33% automated data entry;Tech & Data;75;90;%;percentage;up;yes;donut;610;2;ai-helpdesk
+tech-action-1;Mar 2026;Data accuracy;At least 90% data accuracy and 33% automated data entry;Tech & Data;80;90;%;percentage;up;yes;donut;610;2;ai-helpdesk
+tech-action-2;Jan 2026;CB satisfaction;CB satisfaction ease of use is >4/5;Tech & Data;3.2;4;/5;rating;stable;yes;donut;620;2;ai-helpdesk
+tech-action-2;Feb 2026;CB satisfaction;CB satisfaction ease of use is >4/5;Tech & Data;3.4;4;/5;rating;up;yes;donut;620;2;ai-helpdesk
+tech-action-2;Mar 2026;CB satisfaction;CB satisfaction ease of use is >4/5;Tech & Data;3.6;4;/5;rating;up;yes;donut;620;2;ai-helpdesk
+tech-action-3;Jan 2026;Employee IT;Employee satisfaction ease of use is >4/5;Tech & Data;2.9;4;/5;rating;up;yes;donut;630;2;ai-helpdesk
+tech-action-3;Feb 2026;Employee IT;Employee satisfaction ease of use is >4/5;Tech & Data;3.2;4;/5;rating;up;yes;donut;630;2;ai-helpdesk
+tech-action-3;Mar 2026;Employee IT;Employee satisfaction ease of use is >4/5;Tech & Data;3.5;4;/5;rating;up;yes;donut;630;2;ai-helpdesk
+tech-action-4;Jan 2026;AI automation;10% helpdesk cases automated via AI;Tech & Data;3;10;%;percentage;stable;yes;donut;640;2;ai-helpdesk
+tech-action-4;Feb 2026;AI automation;10% helpdesk cases automated via AI;Tech & Data;5;10;%;percentage;up;yes;donut;640;2;ai-helpdesk
+tech-action-4;Mar 2026;AI automation;10% helpdesk cases automated via AI;Tech & Data;7;10;%;percentage;up;yes;donut;640;2;ai-helpdesk
