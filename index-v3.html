@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GMP+ OGSM Goals - V2.1</title>
+    <title>GMP+ OGSM Goals - V3</title>
     <style>
         /* GMP+ Brand Colors */
         :root {
@@ -103,6 +103,37 @@
 
         .version-switcher select:hover {
             background: rgba(255, 255, 255, 0.3);
+        }
+
+        /* Page Tabs */
+        .page-tabs {
+            display: flex;
+            gap: 4px;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 4px;
+            border-radius: 8px;
+        }
+
+        .tab-btn {
+            padding: 6px 16px;
+            border: none;
+            background: transparent;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            border-radius: 6px;
+            transition: all 0.2s ease;
+        }
+
+        .tab-btn:hover {
+            background: rgba(255, 255, 255, 0.15);
+            color: var(--white);
+        }
+
+        .tab-btn.active {
+            background: rgba(255, 255, 255, 0.25);
+            color: var(--white);
         }
 
         .header-right {
@@ -228,8 +259,8 @@
             overflow: auto;
         }
 
-        /* Dashboard Content */
-        #dashboard-content {
+        /* Page Content Containers */
+        .page-content {
             flex: 1;
             display: none;
             flex-direction: column;
@@ -237,7 +268,7 @@
             min-height: 0;
         }
 
-        #dashboard-content.show {
+        .page-content.show {
             display: flex;
         }
 
@@ -719,6 +750,218 @@
             color: white;
         }
 
+        /* ============================================================ */
+        /* PAGE 2: TOPICS PAGE STYLES */
+        /* ============================================================ */
+
+        .topics-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            padding: 8px 0;
+        }
+
+        .topic-card {
+            background: var(--white);
+            border-radius: 12px;
+            padding: 12px;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .topic-card:hover {
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+        }
+
+        .topic-category {
+            font-size: 0.6rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--gmp-purple);
+            background: rgba(104, 89, 167, 0.1);
+            padding: 2px 10px;
+            border-radius: 10px;
+            margin-bottom: 6px;
+        }
+
+        .topic-name {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--gray-dark);
+            text-align: center;
+            margin-bottom: 8px;
+            min-height: 20px;
+        }
+
+        /* Main Donut for Topic */
+        .main-donut-container {
+            position: relative;
+            width: 90px;
+            height: 90px;
+            margin-bottom: 8px;
+        }
+
+        .main-donut-chart {
+            width: 100%;
+            height: 100%;
+            transform: rotate(-90deg);
+        }
+
+        .main-donut-ring {
+            fill: none;
+            stroke: var(--gray-medium);
+            stroke-width: 10;
+        }
+
+        .main-donut-segment {
+            fill: none;
+            stroke-width: 10;
+            stroke-linecap: round;
+            transition: stroke-dasharray 0.5s ease-out;
+        }
+
+        .main-donut-center {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+
+        .main-donut-value {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--gmp-purple-dark);
+        }
+
+        .main-donut-unit {
+            font-size: 0.6rem;
+            color: var(--gray-dark);
+        }
+
+        /* Mini Donuts Grid for Sub-Actions */
+        .mini-donuts-section {
+            width: 100%;
+            margin-top: 8px;
+            padding-top: 8px;
+            border-top: 1px solid var(--gray-medium);
+        }
+
+        .mini-donuts-title {
+            font-size: 0.6rem;
+            font-weight: 600;
+            color: var(--gray-dark);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 6px;
+            text-align: center;
+        }
+
+        .mini-donuts-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 6px;
+        }
+
+        .mini-donut {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 4px;
+            border-radius: 6px;
+            background: var(--gray-light);
+            cursor: pointer;
+            transition: background 0.2s ease;
+            width: 50px;
+        }
+
+        .mini-donut:hover {
+            background: rgba(104, 89, 167, 0.1);
+        }
+
+        .mini-donut-container {
+            position: relative;
+            width: 36px;
+            height: 36px;
+        }
+
+        .mini-donut-chart {
+            width: 100%;
+            height: 100%;
+            transform: rotate(-90deg);
+        }
+
+        .mini-donut-ring {
+            fill: none;
+            stroke: var(--gray-medium);
+            stroke-width: 5;
+        }
+
+        .mini-donut-segment {
+            fill: none;
+            stroke-width: 5;
+            stroke-linecap: round;
+            transition: stroke-dasharray 0.5s ease-out;
+        }
+
+        .mini-donut-center {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 0.55rem;
+            font-weight: 700;
+            color: var(--gmp-purple-dark);
+        }
+
+        .mini-donut-label {
+            font-size: 0.5rem;
+            color: var(--gray-dark);
+            text-align: center;
+            margin-top: 2px;
+            max-width: 46px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        /* Mini Donut Tooltip */
+        .mini-donut-tooltip {
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--gmp-purple-dark);
+            color: var(--white);
+            padding: 6px 10px;
+            border-radius: 6px;
+            font-size: 0.65rem;
+            white-space: nowrap;
+            z-index: 100;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.2s ease;
+            margin-bottom: 4px;
+        }
+
+        .mini-donut-tooltip::after {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            border: 5px solid transparent;
+            border-top-color: var(--gmp-purple-dark);
+        }
+
+        .mini-donut:hover .mini-donut-tooltip {
+            opacity: 1;
+        }
+
         /* Legend */
         .legend {
             display: flex;
@@ -842,6 +1085,9 @@
             .donut-grid {
                 grid-template-columns: repeat(3, 1fr);
             }
+            .topics-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
 
         @media (max-width: 1000px) {
@@ -850,6 +1096,9 @@
             }
             .charts-grid {
                 grid-template-columns: 1fr;
+            }
+            .topics-grid {
+                grid-template-columns: repeat(2, 1fr);
             }
         }
 
@@ -865,6 +1114,9 @@
                 flex-direction: column;
             }
             .donut-grid {
+                grid-template-columns: 1fr;
+            }
+            .topics-grid {
                 grid-template-columns: 1fr;
             }
             .legend {
@@ -883,10 +1135,10 @@
                 background: white;
                 padding: 10px;
             }
-            .upload-area, .welcome-state, .btn-download-template, .date-slider-container {
+            .upload-area, .welcome-state, .btn-download-template, .date-slider-container, .page-tabs {
                 display: none !important;
             }
-            .kpi-card, .chart-card {
+            .kpi-card, .chart-card, .topic-card {
                 box-shadow: none;
                 border: 1px solid var(--gray-medium);
                 break-inside: avoid;
@@ -917,10 +1169,14 @@
                 <select id="version-select" onchange="switchVersion(this.value)">
                     <option value="v1">V1 - Classic</option>
                     <option value="v2">V2 - Historic</option>
-                    <option value="v21" selected>V2.1 - Excel</option>
+                    <option value="v21">V2.1 - Excel</option>
                     <option value="v22">V2.2 - Topics</option>
-                    <option value="v3">V3 - Strategies</option>
+                    <option value="v3" selected>V3 - Strategies</option>
                 </select>
+            </div>
+            <div class="page-tabs" id="page-tabs" style="display: none;">
+                <button class="tab-btn active" data-page="overview" onclick="switchPage('overview')">Goals</button>
+                <button class="tab-btn" data-page="topics" onclick="switchPage('topics')">Strategies</button>
             </div>
             <h1 id="dashboard-title">GMP+ OGSM Goals 2026-2028</h1>
         </div>
@@ -944,9 +1200,9 @@
     <div class="main-content" id="main-content">
         <!-- Welcome state shown initially -->
         <div class="welcome-state" id="welcome-state">
-            <h2>Welcome to the OGSM Goals V2.1</h2>
+            <h2>Welcome to the OGSM Goals V3</h2>
             <p>Download the Excel template, update your KPI data, save as CSV, and upload here.<br>
-            V2.1 features: Excel template workflow, date slider, yearly progress tracking.</p>
+            V3 features: Two-page dashboard with Goals and Strategies views.</p>
 
             <div class="welcome-upload" id="welcome-upload">
                 <div class="welcome-upload-icon">📊</div>
@@ -954,13 +1210,13 @@
                 <div class="upload-hint" style="margin-top: 8px;">or click to select a file</div>
             </div>
 
-            <a class="btn-download-template" id="download-template" href="kpi-data-template-v21.xlsx" download>
+            <a class="btn-download-template" id="download-template" href="kpi-data-template-v3.xlsx" download>
                 Download Excel Template
             </a>
         </div>
 
-        <!-- Dashboard content (hidden initially) -->
-        <div id="dashboard-content">
+        <!-- Page 1: Overview (hidden initially) -->
+        <div id="page-overview" class="page-content">
             <!-- Donut Charts Section -->
             <div class="dashboard-section">
                 <h2 class="section-title">Key Performance Indicators</h2>
@@ -994,10 +1250,30 @@
                 </div>
             </div>
         </div>
+
+        <!-- Page 2: Topics (hidden initially) -->
+        <div id="page-topics" class="page-content">
+            <div class="topics-grid" id="topics-grid"></div>
+
+            <div class="legend">
+                <div class="legend-item">
+                    <div class="legend-color green"></div>
+                    <span>On track (≥80%)</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color orange"></div>
+                    <span>Attention (50-80%)</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color red"></div>
+                    <span>Behind (&lt;50%)</span>
+                </div>
+            </div>
+        </div>
     </div>
 
     <div class="footer">
-        GMP+ International © 2026 | OGSM Goals V2.1
+        GMP+ International © 2026 | OGSM Goals V3
     </div>
 
     <input type="file" id="file-input" accept=".csv">
@@ -1021,11 +1297,36 @@
     }
 
     // ============================================================
+    // PAGE SWITCHER
+    // ============================================================
+
+    let currentPage = 'overview';
+
+    function switchPage(page) {
+        currentPage = page;
+
+        // Update tab buttons
+        document.querySelectorAll('.tab-btn').forEach(btn => {
+            btn.classList.toggle('active', btn.dataset.page === page);
+        });
+
+        // Update page visibility
+        document.getElementById('page-overview').classList.toggle('show', page === 'overview');
+        document.getElementById('page-topics').classList.toggle('show', page === 'topics');
+    }
+
+    // ============================================================
     // CONFIGURATION
     // ============================================================
 
     const DONUT_RADIUS = 27;
     const DONUT_CIRCUMFERENCE = 2 * Math.PI * DONUT_RADIUS;
+
+    const MAIN_DONUT_RADIUS = 40;
+    const MAIN_DONUT_CIRCUMFERENCE = 2 * Math.PI * MAIN_DONUT_RADIUS;
+
+    const MINI_DONUT_RADIUS = 15;
+    const MINI_DONUT_CIRCUMFERENCE = 2 * Math.PI * MINI_DONUT_RADIUS;
 
     // IDs for chart KPIs (shown as yearly progress bars)
     const CHART_KPIS = ['fsa-certificates', 'fra-certificates'];
@@ -1052,12 +1353,14 @@
     const welcomeState = document.getElementById('welcome-state');
     const welcomeUpload = document.getElementById('welcome-upload');
     const headerUpload = document.getElementById('header-upload');
-    const dashboardContent = document.getElementById('dashboard-content');
+    const pageOverview = document.getElementById('page-overview');
+    const pageTopics = document.getElementById('page-topics');
+    const pageTabs = document.getElementById('page-tabs');
     const donutGrid = document.getElementById('donut-grid');
     const liquiditySection = document.getElementById('liquidity-section');
     const liquidityGrid = document.getElementById('liquidity-grid');
     const chartsGrid = document.getElementById('charts-grid');
-    const legend = document.getElementById('legend');
+    const topicsGrid = document.getElementById('topics-grid');
     const errorMessage = document.getElementById('error-message');
     const dateSliderContainer = document.getElementById('date-slider-container');
     const dateSlider = document.getElementById('date-slider');
@@ -1279,6 +1582,8 @@
             kpi.trend = kpi.trend || 'stable';
             kpi.showTarget = (kpi.showTarget || 'yes').toLowerCase() === 'yes';
             kpi.order = parseInt(kpi.order) || 0;
+            kpi.sheet = parseInt(kpi.sheet) || 1;
+            kpi.parentId = kpi.parentId || '';
 
             // Set displayType based on category if not specified
             if (!kpi.displayType) {
@@ -1333,7 +1638,8 @@
 
     function showDashboard() {
         welcomeState.style.display = 'none';
-        dashboardContent.classList.add('show');
+        pageOverview.classList.add('show');
+        pageTabs.style.display = 'flex';
         headerUpload.style.display = 'inline-flex';
     }
 
@@ -1341,10 +1647,14 @@
         const selectedDate = availableDates[currentDateIndex];
         const currentData = allData.filter(kpi => kpi.date === selectedDate);
 
-        // Filter KPIs by display type
-        const donutKPIs = currentData.filter(kpi => kpi.displayType === 'donut' && kpi.category !== 'Liquidity');
-        const liquidityKPIs = currentData.filter(kpi => kpi.category === 'Liquidity' || kpi.displayType === 'line');
-        const chartKPIs = currentData.filter(kpi => CHART_KPIS.includes(kpi.id) || kpi.displayType === 'bar');
+        // Filter by sheet
+        const sheet1Data = currentData.filter(kpi => kpi.sheet === 1);
+        const sheet2Data = currentData.filter(kpi => kpi.sheet === 2);
+
+        // Page 1: Overview
+        const donutKPIs = sheet1Data.filter(kpi => kpi.displayType === 'donut' && kpi.category !== 'Liquidity');
+        const liquidityKPIs = sheet1Data.filter(kpi => kpi.category === 'Liquidity' || kpi.displayType === 'line');
+        const chartKPIs = sheet1Data.filter(kpi => CHART_KPIS.includes(kpi.id) || kpi.displayType === 'bar');
 
         // Sort each group by order
         donutKPIs.sort((a, b) => a.order - b.order);
@@ -1353,9 +1663,13 @@
 
         document.getElementById('last-updated').textContent = `Viewing: ${selectedDate}`;
 
+        // Render Page 1
         renderDonutCharts(donutKPIs);
         renderLiquidityCharts(liquidityKPIs);
         renderYearlyCharts(chartKPIs);
+
+        // Render Page 2: Topics
+        renderTopicsPage(sheet2Data);
     }
 
     function renderDonutCharts(kpis) {
@@ -1614,6 +1928,151 @@
         `;
 
         return card;
+    }
+
+    // ============================================================
+    // PAGE 2: TOPICS RENDERING
+    // ============================================================
+
+    function renderTopicsPage(sheet2Data) {
+        topicsGrid.innerHTML = '';
+
+        if (sheet2Data.length === 0) {
+            return;
+        }
+
+        // Separate main topics (no parentId) from sub-actions (have parentId)
+        const mainTopics = sheet2Data.filter(kpi => !kpi.parentId);
+        const subActions = sheet2Data.filter(kpi => kpi.parentId);
+
+        // Sort main topics by order
+        mainTopics.sort((a, b) => a.order - b.order);
+
+        // Group sub-actions by parentId
+        const subActionsByParent = {};
+        subActions.forEach(action => {
+            if (!subActionsByParent[action.parentId]) {
+                subActionsByParent[action.parentId] = [];
+            }
+            subActionsByParent[action.parentId].push(action);
+        });
+
+        // Sort sub-actions within each group by order
+        Object.keys(subActionsByParent).forEach(parentId => {
+            subActionsByParent[parentId].sort((a, b) => a.order - b.order);
+        });
+
+        // Create topic cards
+        mainTopics.forEach(topic => {
+            const topicSubActions = subActionsByParent[topic.id] || [];
+            const card = createTopicCard(topic, topicSubActions);
+            topicsGrid.appendChild(card);
+        });
+
+        // Animate donuts
+        setTimeout(() => {
+            document.querySelectorAll('.main-donut-segment, .mini-donut-segment').forEach(segment => {
+                const targetDash = segment.getAttribute('data-target-dash');
+                if (targetDash) {
+                    segment.style.strokeDasharray = targetDash;
+                }
+            });
+        }, 100);
+    }
+
+    function createTopicCard(topic, subActions) {
+        const card = document.createElement('div');
+        card.className = 'topic-card';
+
+        // Calculate main topic percentage (average of sub-actions or own value)
+        let mainPercentage;
+        if (subActions.length > 0) {
+            const totalPercentage = subActions.reduce((sum, action) => {
+                return sum + calculatePercentage(action);
+            }, 0);
+            mainPercentage = totalPercentage / subActions.length;
+        } else {
+            mainPercentage = calculatePercentage(topic);
+        }
+
+        const statusClass = getStatusClass(mainPercentage);
+        const mainDashArray = calculateMainDashArray(mainPercentage);
+
+        const displayValue = Math.round(mainPercentage);
+
+        // Create mini-donuts HTML
+        let miniDonutsHtml = '';
+        if (subActions.length > 0) {
+            miniDonutsHtml = `
+                <div class="mini-donuts-section">
+                    <div class="mini-donuts-title">Actions (${subActions.length})</div>
+                    <div class="mini-donuts-grid">
+                        ${subActions.map(action => createMiniDonutHtml(action)).join('')}
+                    </div>
+                </div>
+            `;
+        }
+
+        card.innerHTML = `
+            <div class="topic-category">${escapeHtml(topic.category)}</div>
+            <div class="topic-name">${escapeHtml(topic.name)}</div>
+
+            <div class="main-donut-container">
+                <svg class="main-donut-chart" viewBox="0 0 100 100">
+                    <circle class="main-donut-ring" cx="50" cy="50" r="${MAIN_DONUT_RADIUS}"/>
+                    <circle class="main-donut-segment ${statusClass}"
+                            cx="50" cy="50" r="${MAIN_DONUT_RADIUS}"
+                            stroke-dasharray="0 ${MAIN_DONUT_CIRCUMFERENCE}"
+                            data-target-dash="${mainDashArray}"/>
+                </svg>
+                <div class="main-donut-center">
+                    <div class="main-donut-value">${displayValue}%</div>
+                </div>
+            </div>
+
+            ${miniDonutsHtml}
+        `;
+
+        return card;
+    }
+
+    function createMiniDonutHtml(action) {
+        const percentage = calculatePercentage(action);
+        const statusClass = getStatusClass(percentage);
+        const dashArray = calculateMiniDashArray(percentage);
+        const displayValue = Math.round(percentage);
+
+        // Create short label (first 6 chars or first word)
+        const shortLabel = action.name.length > 8
+            ? action.name.substring(0, 6) + '..'
+            : action.name;
+
+        return `
+            <div class="mini-donut" title="${escapeHtml(action.description || action.name)}">
+                <div class="mini-donut-tooltip">${escapeHtml(action.description || action.name)}<br>${displayValue}% complete</div>
+                <div class="mini-donut-container">
+                    <svg class="mini-donut-chart" viewBox="0 0 40 40">
+                        <circle class="mini-donut-ring" cx="20" cy="20" r="${MINI_DONUT_RADIUS}"/>
+                        <circle class="mini-donut-segment ${statusClass}"
+                                cx="20" cy="20" r="${MINI_DONUT_RADIUS}"
+                                stroke-dasharray="0 ${MINI_DONUT_CIRCUMFERENCE}"
+                                data-target-dash="${dashArray}"/>
+                    </svg>
+                    <div class="mini-donut-center">${displayValue}%</div>
+                </div>
+                <div class="mini-donut-label">${escapeHtml(shortLabel)}</div>
+            </div>
+        `;
+    }
+
+    function calculateMainDashArray(percentage) {
+        const filled = (percentage / 100) * MAIN_DONUT_CIRCUMFERENCE;
+        return `${filled} ${MAIN_DONUT_CIRCUMFERENCE}`;
+    }
+
+    function calculateMiniDashArray(percentage) {
+        const filled = (percentage / 100) * MINI_DONUT_CIRCUMFERENCE;
+        return `${filled} ${MINI_DONUT_CIRCUMFERENCE}`;
     }
 
     // ============================================================
