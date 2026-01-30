@@ -1,0 +1,28 @@
+﻿id;date;name;description;category;currentValue;targetValue;unit;type;trend;showTarget;displayType;order
+nps-partners;Jan 2026;NPS Partners;Percentage of correct data in our systems;MARKETS;5.9;8;/>8;rating;down;no;donut;100
+nps-partners;Feb 2026;NPS Partners;Percentage of correct data in our systems;MARKETS;6.8;8;/>8;rating;up;no;donut;100
+nps-partners;Mar 2026;NPS Partners;Percentage of correct data in our systems;MARKETS;7.8;8;/>8;rating;up;no;donut;100
+nps-customers;Jan 2026;NPS Customers;Percentage of data entered automatically;MARKETS;6.5;8;/>8;rating;stable;no;donut;200
+nps-customers;Feb 2026;NPS Customers;Percentage of data entered automatically;MARKETS;7.2;8;/>8;rating;up;no;donut;200
+nps-customers;Mar 2026;NPS Customers;Percentage of data entered automatically;MARKETS;7.2;8;/>8;rating;stable;no;donut;200
+employee-satisfaction;Jan 2026;Employee Satisfaction;Employee satisfaction with IT ease of use;CULTURE;2.9;4;/5;rating;up;yes;donut;300
+employee-satisfaction;Feb 2026;Employee Satisfaction;Employee satisfaction with IT ease of use;CULTURE;3.2;4;/5;rating;up;yes;donut;300
+employee-satisfaction;Mar 2026;Employee Satisfaction;Employee satisfaction with IT ease of use;CULTURE;3.7;4;/5;rating;up;yes;donut;300
+revenue;Jan 2026;Revenue;How much money;MONEY;6.8;7.84; mio;number;stable;yes;donut;400
+revenue;Feb 2026;Revenue;How much money;MONEY;6.8;7.84; mio;number;stable;yes;donut;400
+revenue;Mar 2026;Revenue;How much money;MONEY;6.8;7.84; mio;number;stable;yes;donut;400
+yearly-investments;Jan 2026;Yearly investments;;MONEY;0.9;1.5; mio;number;stable;yes;donut;500
+yearly-investments;Feb 2026;Yearly investments;;MONEY;0.9;1.5; mio;number;stable;yes;donut;500
+yearly-investments;Mar 2026;Yearly investments;;MONEY;0.9;1.5; mio;number;stable;yes;donut;500
+gross-profit;Jan 2026;Gross profit;;MONEY;65;76;%;percentage;stable;yes;donut;600
+gross-profit;Feb 2026;Gross profit;;MONEY;65;76;%;percentage;stable;yes;donut;600
+gross-profit;Mar 2026;Gross profit;;MONEY;65;76;%;percentage;stable;yes;donut;600
+liquidity-ratio;Jan 2026;Liquidity Ratio;Current liquidity ratio;Liquidity;7.3;8.5; ton;number;down;yes;line;800
+liquidity-ratio;Feb 2026;Liquidity Ratio;Current liquidity ratio;Liquidity;7.9;8.5; ton;number;up;yes;line;800
+liquidity-ratio;Mar 2026;Liquidity Ratio;Current liquidity ratio;Liquidity;8.9;8.5; ton;number;up;yes;line;800
+fra-certificates;Jan 2026;FRA Certificates Growth;Growth in FRA certificates vs December 2024;Sustainability;225;1850;;number;stable;yes;bar;900
+fra-certificates;Feb 2026;FRA Certificates Growth;Growth in FRA certificates vs December 2024;Sustainability;225;1850;;number;stable;yes;bar;900
+fra-certificates;Mar 2026;FRA Certificates Growth;Growth in FRA certificates vs December 2024;Sustainability;225;1850;;number;stable;yes;bar;900
+fsa-certificates;Jan 2026;FSA Certificates Growth;Growth in FSA certificates vs December 2024;Markets;851;4071;;number;up;yes;bar;1000
+fsa-certificates;Feb 2026;FSA Certificates Growth;Growth in FSA certificates vs December 2024;Markets;851;4071;;number;up;yes;bar;1000
+fsa-certificates;Mar 2026;FSA Certificates Growth;Growth in FSA certificates vs December 2024;Markets;851;4071;;number;up;yes;bar;1000

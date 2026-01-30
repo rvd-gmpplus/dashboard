@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GMP+ OGSM Goals - V2</title>
+    <title>GMP+ OGSM Goals - V2.1</title>
     <style>
         /* GMP+ Brand Colors */
         :root {
@@ -36,7 +36,7 @@
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background: linear-gradient(135deg, var(--gray-light) 0%, var(--white) 100%);
-            padding: 12px;
+            padding: 8px;
             display: flex;
             flex-direction: column;
         }
@@ -45,15 +45,15 @@
         .header {
             background: linear-gradient(135deg, var(--gmp-purple) 0%, var(--gmp-purple-dark) 100%);
             color: var(--white);
-            padding: 12px 20px;
-            border-radius: 12px;
-            margin-bottom: 12px;
+            padding: 8px 16px;
+            border-radius: 10px;
+            margin-bottom: 8px;
             box-shadow: 0 4px 20px rgba(104, 89, 167, 0.3);
             display: flex;
             justify-content: space-between;
             align-items: center;
             flex-wrap: wrap;
-            gap: 12px;
+            gap: 10px;
             flex-shrink: 0;
         }
 
@@ -143,45 +143,49 @@
             display: none;
         }
 
-        /* Date Slider Container */
+        /* Date Slider Container - Horizontal compact layout */
         .date-slider-container {
             background: var(--white);
             border-radius: 8px;
-            padding: 10px 20px;
-            margin-bottom: 12px;
+            padding: 6px 20px;
+            margin-bottom: 8px;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
             display: none;
             flex-shrink: 0;
+            align-items: center;
+            gap: 15px;
         }
 
         .date-slider-container.show {
-            display: block;
+            display: flex;
         }
 
         .date-slider-header {
             display: flex;
-            justify-content: space-between;
             align-items: center;
-            margin-bottom: 8px;
+            gap: 10px;
+            flex-shrink: 0;
         }
 
         .date-slider-title {
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             font-weight: 600;
             color: var(--gmp-purple);
+            white-space: nowrap;
         }
 
         .current-date-display {
-            font-size: 1rem;
+            font-size: 0.85rem;
             font-weight: 700;
             color: var(--gmp-purple-dark);
             background: rgba(104, 89, 167, 0.1);
-            padding: 4px 12px;
+            padding: 3px 10px;
             border-radius: 6px;
+            white-space: nowrap;
         }
 
         .date-slider {
-            width: 100%;
+            flex: 1;
             height: 6px;
             border-radius: 3px;
             background: var(--gray-medium);
@@ -194,8 +198,8 @@
         .date-slider::-webkit-slider-thumb {
             -webkit-appearance: none;
             appearance: none;
-            width: 18px;
-            height: 18px;
+            width: 16px;
+            height: 16px;
             border-radius: 50%;
             background: var(--gmp-purple);
             cursor: pointer;
@@ -203,8 +207,8 @@
         }
 
         .date-slider::-moz-range-thumb {
-            width: 18px;
-            height: 18px;
+            width: 16px;
+            height: 16px;
             border-radius: 50%;
             background: var(--gmp-purple);
             cursor: pointer;
@@ -212,11 +216,7 @@
         }
 
         .date-labels {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 6px;
-            font-size: 0.7rem;
-            color: var(--gray-dark);
+            display: none;
         }
 
         /* Main Content Area */
@@ -233,7 +233,7 @@
             flex: 1;
             display: none;
             flex-direction: column;
-            gap: 12px;
+            gap: 8px;
             min-height: 0;
         }
 
@@ -247,11 +247,11 @@
         }
 
         .section-title {
-            font-size: 0.9rem;
+            font-size: 0.8rem;
             font-weight: 600;
             color: var(--gmp-purple-dark);
-            margin-bottom: 10px;
-            padding-bottom: 6px;
+            margin-bottom: 6px;
+            padding-bottom: 4px;
             border-bottom: 2px solid var(--gmp-purple-light);
         }
 
@@ -259,14 +259,14 @@
         .donut-grid {
             display: grid;
             grid-template-columns: repeat(6, 1fr);
-            gap: 12px;
+            gap: 8px;
         }
 
         /* Compact KPI Card */
         .kpi-card {
             background: var(--white);
-            border-radius: 10px;
-            padding: 12px;
+            border-radius: 8px;
+            padding: 8px;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
             transition: transform 0.2s ease, box-shadow 0.2s ease;
             display: flex;
@@ -280,24 +280,24 @@
         }
 
         .kpi-category {
-            font-size: 0.6rem;
+            font-size: 0.55rem;
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 0.3px;
             color: var(--gmp-purple);
             background: rgba(104, 89, 167, 0.1);
-            padding: 2px 8px;
-            border-radius: 10px;
-            margin-bottom: 6px;
+            padding: 1px 6px;
+            border-radius: 8px;
+            margin-bottom: 4px;
         }
 
         .kpi-name {
-            font-size: 0.75rem;
+            font-size: 0.7rem;
             font-weight: 600;
             color: var(--gray-dark);
             text-align: center;
-            margin-bottom: 8px;
-            min-height: 28px;
+            margin-bottom: 4px;
+            min-height: 24px;
             display: flex;
             align-items: center;
             line-height: 1.2;
@@ -306,9 +306,9 @@
         /* Compact Donut Chart */
         .donut-container {
             position: relative;
-            width: 70px;
-            height: 70px;
-            margin-bottom: 8px;
+            width: 60px;
+            height: 60px;
+            margin-bottom: 4px;
         }
 
         .donut-chart {
@@ -339,13 +339,13 @@
         }
 
         .donut-value {
-            font-size: 0.95rem;
+            font-size: 0.85rem;
             font-weight: 700;
             color: var(--gmp-purple-dark);
         }
 
         .donut-unit {
-            font-size: 0.6rem;
+            font-size: 0.55rem;
             color: var(--gray-dark);
         }
 
@@ -356,7 +356,7 @@
         }
 
         .target-label {
-            font-size: 0.65rem;
+            font-size: 0.6rem;
             color: var(--gray-dark);
         }
 
@@ -370,10 +370,10 @@
             display: inline-flex;
             align-items: center;
             gap: 2px;
-            font-size: 0.65rem;
-            padding: 2px 6px;
-            border-radius: 8px;
-            margin-top: 4px;
+            font-size: 0.6rem;
+            padding: 2px 5px;
+            border-radius: 6px;
+            margin-top: 2px;
         }
 
         .trend.up {
@@ -395,19 +395,154 @@
         .status-green { stroke: var(--gmp-green); }
         .status-orange { stroke: var(--orange); }
         .status-red { stroke: var(--red); }
+        .status-green-fill { background: var(--gmp-green); }
+        .status-orange-fill { background: var(--orange); }
+        .status-red-fill { background: var(--red); }
+
+        /* Liquidity Section - Horizontal compact layout */
+        .liquidity-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .liquidity-card {
+            background: var(--white);
+            border-radius: 10px;
+            padding: 10px 16px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .liquidity-info {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            min-width: 200px;
+            flex-shrink: 0;
+        }
+
+        .liquidity-title-section {
+            flex-shrink: 0;
+        }
+
+        .liquidity-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--gray-dark);
+            margin-bottom: 1px;
+        }
+
+        .liquidity-subtitle {
+            font-size: 0.65rem;
+            color: var(--gray-dark);
+            opacity: 0.7;
+        }
+
+        .liquidity-value {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--gmp-purple-dark);
+            white-space: nowrap;
+        }
+
+        .liquidity-bar-section {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .liquidity-bar-container {
+            flex: 1;
+            height: 14px;
+            background: var(--gray-light);
+            border-radius: 7px;
+            position: relative;
+            overflow: visible;
+        }
+
+        .liquidity-bar-fill {
+            height: 100%;
+            border-radius: 7px;
+            transition: width 0.5s ease-out;
+            position: relative;
+        }
+
+        .liquidity-target-marker {
+            position: absolute;
+            top: -3px;
+            height: calc(100% + 6px);
+            width: 3px;
+            background: var(--gmp-purple-dark);
+            border-radius: 2px;
+            z-index: 10;
+        }
+
+        .liquidity-target-marker::before {
+            content: '';
+            position: absolute;
+            top: -5px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 0;
+            border-left: 4px solid transparent;
+            border-right: 4px solid transparent;
+            border-top: 5px solid var(--gmp-purple-dark);
+        }
+
+        .liquidity-target-label {
+            font-size: 0.7rem;
+            color: var(--gray-dark);
+            white-space: nowrap;
+        }
+
+        .liquidity-target-value {
+            font-weight: 600;
+            color: var(--gmp-purple);
+        }
+
+        .liquidity-trend {
+            display: inline-flex;
+            align-items: center;
+            gap: 3px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 3px 8px;
+            border-radius: 6px;
+            flex-shrink: 0;
+        }
+
+        .liquidity-trend.up {
+            background: rgba(141, 198, 63, 0.2);
+            color: var(--gmp-green-dark);
+        }
+
+        .liquidity-trend.down {
+            background: rgba(231, 76, 60, 0.2);
+            color: var(--red);
+        }
+
+        .liquidity-trend.stable {
+            background: rgba(243, 156, 18, 0.2);
+            color: var(--orange);
+        }
 
         /* Charts Grid - 2 columns */
         .charts-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 12px;
+            gap: 8px;
         }
 
         /* Redesigned Chart Card with Yearly Milestones */
         .chart-card {
             background: var(--white);
-            border-radius: 10px;
-            padding: 14px;
+            border-radius: 8px;
+            padding: 10px;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
         }
 
@@ -459,18 +594,18 @@
         .yearly-progress-container {
             display: flex;
             flex-direction: column;
-            gap: 8px;
+            gap: 5px;
         }
 
         .year-row {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 8px;
         }
 
         .year-label {
-            width: 35px;
-            font-size: 0.75rem;
+            width: 30px;
+            font-size: 0.7rem;
             font-weight: 600;
             color: var(--gray-dark);
             flex-shrink: 0;
@@ -478,9 +613,9 @@
 
         .year-bar-container {
             flex: 1;
-            height: 24px;
+            height: 18px;
             background: var(--gray-light);
-            border-radius: 6px;
+            border-radius: 5px;
             position: relative;
             overflow: hidden;
         }
@@ -538,9 +673,9 @@
         }
 
         .year-values {
-            width: 90px;
+            width: 80px;
             text-align: right;
-            font-size: 0.7rem;
+            font-size: 0.65rem;
             flex-shrink: 0;
         }
 
@@ -588,26 +723,26 @@
         .legend {
             display: flex;
             justify-content: center;
-            gap: 20px;
-            padding: 10px;
+            gap: 16px;
+            padding: 6px 10px;
             background: var(--white);
-            border-radius: 8px;
+            border-radius: 6px;
             box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
             flex-shrink: 0;
-            margin-top: 8px;
+            margin-top: 6px;
         }
 
         .legend .legend-item {
             display: flex;
             align-items: center;
-            gap: 6px;
-            font-size: 0.75rem;
+            gap: 4px;
+            font-size: 0.65rem;
             color: var(--gray-dark);
         }
 
         .legend-color {
-            width: 12px;
-            height: 12px;
+            width: 10px;
+            height: 10px;
             border-radius: 3px;
         }
 
@@ -696,9 +831,9 @@
         /* Footer */
         .footer {
             text-align: center;
-            padding: 8px;
+            padding: 4px;
             color: var(--gray-dark);
-            font-size: 0.75rem;
+            font-size: 0.7rem;
             flex-shrink: 0;
         }
 
@@ -781,8 +916,8 @@
                 <label for="version-select">Version:</label>
                 <select id="version-select" onchange="switchVersion(this.value)">
                     <option value="v1">V1 - Classic</option>
-                    <option value="v2" selected>V2 - Historic</option>
-                    <option value="v21">V2.1 - Excel Template</option>
+                    <option value="v2">V2 - Historic</option>
+                    <option value="v21" selected>V2.1 - Excel Template</option>
                 </select>
             </div>
             <h1 id="dashboard-title">GMP+ OGSM Goals 2026-2028</h1>
@@ -807,9 +942,9 @@
     <div class="main-content" id="main-content">
         <!-- Welcome state shown initially -->
         <div class="welcome-state" id="welcome-state">
-            <h2>Welcome to the OGSM Goals V2</h2>
-            <p>Upload your KPI data with historic dates to display the dashboard.<br>
-            V2 features: date slider, yearly progress tracking.</p>
+            <h2>Welcome to the OGSM Goals V2.1</h2>
+            <p>Download the Excel template, update your KPI data, save as CSV, and upload here.<br>
+            V2.1 features: Excel template workflow, date slider, yearly progress tracking.</p>
 
             <div class="welcome-upload" id="welcome-upload">
                 <div class="welcome-upload-icon">📊</div>
@@ -817,9 +952,9 @@
                 <div class="upload-hint" style="margin-top: 8px;">or click to select a file</div>
             </div>
 
-            <button class="btn-download-template" id="download-template">
-                Download V2 Template
-            </button>
+            <a class="btn-download-template" id="download-template" href="kpi-data-template-v21.xlsx" download>
+                Download Excel Template
+            </a>
         </div>
 
         <!-- Dashboard content (hidden initially) -->
@@ -828,6 +963,12 @@
             <div class="dashboard-section">
                 <h2 class="section-title">Key Performance Indicators</h2>
                 <div class="donut-grid" id="donut-grid"></div>
+            </div>
+
+            <!-- Liquidity Section -->
+            <div class="dashboard-section" id="liquidity-section" style="display: none;">
+                <h2 class="section-title">Liquidity</h2>
+                <div class="liquidity-grid" id="liquidity-grid"></div>
             </div>
 
             <!-- Line Charts Section -->
@@ -854,7 +995,7 @@
     </div>
 
     <div class="footer">
-        GMP+ International © 2026 | OGSM Goals V2
+        GMP+ International © 2026 | OGSM Goals V2.1
     </div>
 
     <input type="file" id="file-input" accept=".csv">
@@ -874,36 +1015,6 @@
             window.location.href = pages[version];
         }
     }
-
-    // ============================================================
-    // CSV TEMPLATE GENERATOR (V2 with dates)
-    // ============================================================
-
-    const CSV_TEMPLATE = `date,id,name,description,category,currentValue,targetValue,target2026,target2027,target2028,unit,type,trend
-Jan 2025,data-accuracy,Data Accuracy,Percentage of correct data in our systems,Tech & Data,68,90,75,82,90,%,percentage,up
-Jan 2025,automated-data-entry,Automated Data Entry,Percentage of data entered automatically,Tech & Data,15,33,20,26,33,%,percentage,up
-Jan 2025,cb-satisfaction,CB Satisfaction,Certification Body satisfaction with ease of use,Tech & Data,3.6,4.0,3.7,3.85,4.0,/5,rating,stable
-Jan 2025,employee-satisfaction,Employee Satisfaction,Employee satisfaction with IT ease of use,Tech & Data,3.4,4.0,3.6,3.8,4.0,/5,rating,up
-Jan 2025,ai-helpdesk,AI Helpdesk Automation,Percentage of helpdesk cases handled by AI,Tech & Data,1,10,3,6,10,%,percentage,up
-Jan 2025,fsa-certificates,FSA Certificates Growth,Growth in FSA certificates compared to December 2024,Markets,800,4071,1357,2714,4071,,number,up
-Jan 2025,fra-certificates,FRA Certificates Growth,Growth in FRA certificates compared to December 2024,Sustainability,400,1850,617,1233,1850,,number,up
-Jan 2025,engagement-score,Engagement Score,Employee engagement via engagement survey,Culture,3.7,4.0,3.8,3.9,4.0,/5,rating,stable
-Feb 2025,data-accuracy,Data Accuracy,Percentage of correct data in our systems,Tech & Data,70,90,75,82,90,%,percentage,up
-Feb 2025,automated-data-entry,Automated Data Entry,Percentage of data entered automatically,Tech & Data,17,33,20,26,33,%,percentage,up
-Feb 2025,cb-satisfaction,CB Satisfaction,Certification Body satisfaction with ease of use,Tech & Data,3.7,4.0,3.7,3.85,4.0,/5,rating,up
-Feb 2025,employee-satisfaction,Employee Satisfaction,Employee satisfaction with IT ease of use,Tech & Data,3.5,4.0,3.6,3.8,4.0,/5,rating,up
-Feb 2025,ai-helpdesk,AI Helpdesk Automation,Percentage of helpdesk cases handled by AI,Tech & Data,2,10,3,6,10,%,percentage,up
-Feb 2025,fsa-certificates,FSA Certificates Growth,Growth in FSA certificates compared to December 2024,Markets,950,4071,1357,2714,4071,,number,up
-Feb 2025,fra-certificates,FRA Certificates Growth,Growth in FRA certificates compared to December 2024,Sustainability,480,1850,617,1233,1850,,number,up
-Feb 2025,engagement-score,Engagement Score,Employee engagement via engagement survey,Culture,3.8,4.0,3.8,3.9,4.0,/5,rating,up
-Mar 2025,data-accuracy,Data Accuracy,Percentage of correct data in our systems,Tech & Data,72,90,75,82,90,%,percentage,up
-Mar 2025,automated-data-entry,Automated Data Entry,Percentage of data entered automatically,Tech & Data,18,33,20,26,33,%,percentage,up
-Mar 2025,cb-satisfaction,CB Satisfaction,Certification Body satisfaction with ease of use,Tech & Data,3.8,4.0,3.7,3.85,4.0,/5,rating,stable
-Mar 2025,employee-satisfaction,Employee Satisfaction,Employee satisfaction with IT ease of use,Tech & Data,3.6,4.0,3.6,3.8,4.0,/5,rating,up
-Mar 2025,ai-helpdesk,AI Helpdesk Automation,Percentage of helpdesk cases handled by AI,Tech & Data,2,10,3,6,10,%,percentage,stable
-Mar 2025,fsa-certificates,FSA Certificates Growth,Growth in FSA certificates compared to December 2024,Markets,1250,4071,1357,2714,4071,,number,up
-Mar 2025,fra-certificates,FRA Certificates Growth,Growth in FRA certificates compared to December 2024,Sustainability,620,1850,617,1233,1850,,number,up
-Mar 2025,engagement-score,Engagement Score,Employee engagement via engagement survey,Culture,3.9,4.0,3.8,3.9,4.0,/5,rating,up`;
 
     // ============================================================
     // CONFIGURATION
@@ -939,10 +1050,11 @@ Mar 2025,engagement-score,Engagement Score,Employee engagement via engagement su
     const headerUpload = document.getElementById('header-upload');
     const dashboardContent = document.getElementById('dashboard-content');
     const donutGrid = document.getElementById('donut-grid');
+    const liquiditySection = document.getElementById('liquidity-section');
+    const liquidityGrid = document.getElementById('liquidity-grid');
     const chartsGrid = document.getElementById('charts-grid');
     const legend = document.getElementById('legend');
     const errorMessage = document.getElementById('error-message');
-    const downloadBtn = document.getElementById('download-template');
     const dateSliderContainer = document.getElementById('date-slider-container');
     const dateSlider = document.getElementById('date-slider');
     const currentDateDisplay = document.getElementById('current-date-display');
@@ -955,7 +1067,6 @@ Mar 2025,engagement-score,Engagement Score,Employee engagement via engagement su
     fileInput.addEventListener('change', handleFileSelect);
     welcomeUpload.addEventListener('click', () => fileInput.click());
     headerUpload.addEventListener('click', () => fileInput.click());
-    downloadBtn.addEventListener('click', downloadTemplate);
     dateSlider.addEventListener('input', handleDateSliderChange);
 
     setupDragDrop(welcomeUpload);
@@ -1162,6 +1273,19 @@ Mar 2025,engagement-score,Engagement Score,Employee engagement via engagement su
             kpi.unit = kpi.unit || '';
             kpi.type = kpi.type || 'percentage';
             kpi.trend = kpi.trend || 'stable';
+            kpi.showTarget = (kpi.showTarget || 'yes').toLowerCase() === 'yes';
+            kpi.order = parseInt(kpi.order) || 0;
+
+            // Set displayType based on category if not specified
+            if (!kpi.displayType) {
+                if (kpi.category === 'Liquidity') {
+                    kpi.displayType = 'line';
+                } else if (CHART_KPIS.includes(kpi.id)) {
+                    kpi.displayType = 'bar';
+                } else {
+                    kpi.displayType = 'donut';
+                }
+            }
 
             // Set default yearly targets if not provided
             if (CHART_KPIS.includes(kpi.id) && DEFAULT_YEARLY_TARGETS[kpi.id]) {
@@ -1187,13 +1311,14 @@ Mar 2025,engagement-score,Engagement Score,Employee engagement via engagement su
             if (char === '"') {
                 inQuotes = !inQuotes;
             } else if ((char === ',' || char === ';') && !inQuotes) {
-                result.push(current.trim());
+                // Only trim trailing whitespace, preserve leading spaces for units like " mio"
+                result.push(current.trimEnd());
                 current = '';
             } else {
                 current += char;
             }
         }
-        result.push(current.trim());
+        result.push(current.trimEnd());
 
         return result;
     }
@@ -1212,12 +1337,20 @@ Mar 2025,engagement-score,Engagement Score,Employee engagement via engagement su
         const selectedDate = availableDates[currentDateIndex];
         const currentData = allData.filter(kpi => kpi.date === selectedDate);
 
-        const donutKPIs = currentData.filter(kpi => !CHART_KPIS.includes(kpi.id));
-        const chartKPIs = currentData.filter(kpi => CHART_KPIS.includes(kpi.id));
+        // Filter KPIs by display type
+        const donutKPIs = currentData.filter(kpi => kpi.displayType === 'donut' && kpi.category !== 'Liquidity');
+        const liquidityKPIs = currentData.filter(kpi => kpi.category === 'Liquidity' || kpi.displayType === 'line');
+        const chartKPIs = currentData.filter(kpi => CHART_KPIS.includes(kpi.id) || kpi.displayType === 'bar');
+
+        // Sort each group by order
+        donutKPIs.sort((a, b) => a.order - b.order);
+        liquidityKPIs.sort((a, b) => a.order - b.order);
+        chartKPIs.sort((a, b) => a.order - b.order);
 
         document.getElementById('last-updated').textContent = `Viewing: ${selectedDate}`;
 
         renderDonutCharts(donutKPIs);
+        renderLiquidityCharts(liquidityKPIs);
         renderYearlyCharts(chartKPIs);
     }
 
@@ -1251,6 +1384,11 @@ Mar 2025,engagement-score,Engagement Score,Employee engagement via engagement su
         const trendIcon = getTrendIcon(kpi.trend);
         const trendText = getTrendText(kpi.trend);
 
+        // Build target label HTML if showTarget is true
+        const targetLabelHtml = kpi.showTarget
+            ? `<div class="target-label">Target: <span class="target-value">${targetDisplay}${escapeHtmlPreserveSpaces(kpi.unit)}</span></div>`
+            : '';
+
         card.innerHTML = `
             <div class="kpi-category">${escapeHtml(kpi.category)}</div>
             <div class="kpi-name">${escapeHtml(kpi.name)}</div>
@@ -1265,14 +1403,12 @@ Mar 2025,engagement-score,Engagement Score,Employee engagement via engagement su
                 </svg>
                 <div class="donut-center">
                     <div class="donut-value">${displayValue}</div>
-                    <div class="donut-unit">${escapeHtml(kpi.unit)}</div>
+                    <div class="donut-unit">${escapeHtmlPreserveSpaces(kpi.unit)}</div>
                 </div>
             </div>
 
             <div class="progress-info">
-                <div class="target-label">
-                    Target: <span class="target-value">${targetDisplay}${escapeHtml(kpi.unit)}</span>
-                </div>
+                ${targetLabelHtml}
                 <div class="trend ${kpi.trend}">
                     <span class="trend-icon">${trendIcon}</span>
                     ${trendText}
@@ -1281,6 +1417,80 @@ Mar 2025,engagement-score,Engagement Score,Employee engagement via engagement su
         `;
 
         return card;
+    }
+
+    function renderLiquidityCharts(kpis) {
+        liquidityGrid.innerHTML = '';
+
+        if (kpis.length === 0) {
+            liquiditySection.style.display = 'none';
+            return;
+        }
+
+        liquiditySection.style.display = 'block';
+
+        kpis.forEach((kpi) => {
+            const card = createLiquidityCard(kpi);
+            liquidityGrid.appendChild(card);
+        });
+    }
+
+    function createLiquidityCard(kpi) {
+        const card = document.createElement('div');
+        card.className = 'liquidity-card';
+
+        const percentage = calculatePercentage(kpi);
+        const statusClass = getStatusFillClass(percentage);
+
+        const displayValue = formatValue(kpi.currentValue, kpi.type);
+        const targetDisplay = formatValue(kpi.targetValue, kpi.type);
+
+        // Calculate scale: max = max(targetValue, currentValue) * 1.05 (5% buffer)
+        const maxValue = Math.max(kpi.targetValue, kpi.currentValue) * 1.05;
+        const fillPercent = (kpi.currentValue / maxValue) * 100;
+        const targetPercent = (kpi.targetValue / maxValue) * 100;
+
+        const trendIcon = getTrendIcon(kpi.trend);
+        const trendText = getTrendText(kpi.trend);
+
+        // Build target marker HTML if showTarget is true
+        const targetMarkerHtml = kpi.showTarget
+            ? `<div class="liquidity-target-marker" style="left: ${targetPercent}%"></div>`
+            : '';
+
+        // Build target label HTML if showTarget is true
+        const targetLabelHtml = kpi.showTarget
+            ? `<div class="liquidity-target-label">Target: <span class="liquidity-target-value">${targetDisplay}${escapeHtmlPreserveSpaces(kpi.unit)}</span></div>`
+            : '<div></div>';
+
+        card.innerHTML = `
+            <div class="liquidity-info">
+                <div class="liquidity-title-section">
+                    <div class="liquidity-title">${escapeHtml(kpi.name)}</div>
+                    <div class="liquidity-subtitle">${escapeHtml(kpi.description)}</div>
+                </div>
+                <div class="liquidity-value">${displayValue}${escapeHtmlPreserveSpaces(kpi.unit)}</div>
+            </div>
+            <div class="liquidity-bar-section">
+                <div class="liquidity-bar-container">
+                    <div class="liquidity-bar-fill ${statusClass}" style="width: ${fillPercent}%"></div>
+                    ${targetMarkerHtml}
+                </div>
+                ${targetLabelHtml}
+            </div>
+            <div class="liquidity-trend ${kpi.trend}">
+                <span>${trendIcon}</span>
+                ${trendText}
+            </div>
+        `;
+
+        return card;
+    }
+
+    function getStatusFillClass(percentage) {
+        if (percentage >= 80) return 'status-green-fill';
+        if (percentage >= 50) return 'status-orange-fill';
+        return 'status-red-fill';
     }
 
     function renderYearlyCharts(kpis) {
@@ -1457,6 +1667,13 @@ Mar 2025,engagement-score,Engagement Score,Employee engagement via engagement su
         return div.innerHTML;
     }
 
+    function escapeHtmlPreserveSpaces(text) {
+        // Escape HTML and preserve leading/trailing spaces by replacing with &nbsp;
+        const escaped = escapeHtml(text);
+        // Replace leading spaces with &nbsp;
+        return escaped.replace(/^(\s+)/, match => '&nbsp;'.repeat(match.length));
+    }
+
     function showError(message) {
         errorMessage.textContent = message;
         errorMessage.classList.add('show');
@@ -1464,22 +1681,6 @@ Mar 2025,engagement-score,Engagement Score,Employee engagement via engagement su
 
     function hideError() {
         errorMessage.classList.remove('show');
-    }
-
-    // ============================================================
-    // TEMPLATE DOWNLOAD
-    // ============================================================
-
-    function downloadTemplate() {
-        const blob = new Blob([CSV_TEMPLATE], { type: 'text/csv;charset=utf-8;' });
-        const url = URL.createObjectURL(blob);
-        const link = document.createElement('a');
-        link.href = url;
-        link.download = 'kpi-data-template-v2.csv';
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-        URL.revokeObjectURL(url);
     }
     </script>
 </body>
