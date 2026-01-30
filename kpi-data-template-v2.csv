@@ -1,25 +1,28 @@
-date,id,name,description,category,currentValue,targetValue,unit,type,trend
-Jan 2025,data-accuracy,Data Accuracy,Percentage of correct data in our systems,Tech & Data,68,90,%,percentage,up
-Jan 2025,automated-data-entry,Automated Data Entry,Percentage of data entered automatically,Tech & Data,15,33,%,percentage,up
-Jan 2025,cb-satisfaction,CB Satisfaction,Certification Body satisfaction with ease of use,Tech & Data,3.6,4.0,/5,rating,stable
-Jan 2025,employee-satisfaction,Employee Satisfaction,Employee satisfaction with IT ease of use,Tech & Data,3.4,4.0,/5,rating,up
-Jan 2025,ai-helpdesk,AI Helpdesk Automation,Percentage of helpdesk cases handled by AI,Tech & Data,1,10,%,percentage,up
-Jan 2025,fsa-certificates,FSA Certificates Growth,Growth in FSA certificates compared to December 2024,Markets,800,4071,,number,up
-Jan 2025,fra-certificates,FRA Certificates Growth,Growth in FRA certificates compared to December 2024,Sustainability,400,1850,,number,up
-Jan 2025,engagement-score,Engagement Score,Employee engagement via engagement survey,Culture,3.7,4.0,/5,rating,stable
-Feb 2025,data-accuracy,Data Accuracy,Percentage of correct data in our systems,Tech & Data,70,90,%,percentage,up
-Feb 2025,automated-data-entry,Automated Data Entry,Percentage of data entered automatically,Tech & Data,17,33,%,percentage,up
-Feb 2025,cb-satisfaction,CB Satisfaction,Certification Body satisfaction with ease of use,Tech & Data,3.7,4.0,/5,rating,up
-Feb 2025,employee-satisfaction,Employee Satisfaction,Employee satisfaction with IT ease of use,Tech & Data,3.5,4.0,/5,rating,up
-Feb 2025,ai-helpdesk,AI Helpdesk Automation,Percentage of helpdesk cases handled by AI,Tech & Data,2,10,%,percentage,up
-Feb 2025,fsa-certificates,FSA Certificates Growth,Growth in FSA certificates compared to December 2024,Markets,950,4071,,number,up
-Feb 2025,fra-certificates,FRA Certificates Growth,Growth in FRA certificates compared to December 2024,Sustainability,480,1850,,number,up
-Feb 2025,engagement-score,Engagement Score,Employee engagement via engagement survey,Culture,3.8,4.0,/5,rating,up
-Mar 2025,data-accuracy,Data Accuracy,Percentage of correct data in our systems,Tech & Data,72,90,%,percentage,up
-Mar 2025,automated-data-entry,Automated Data Entry,Percentage of data entered automatically,Tech & Data,18,33,%,percentage,up
-Mar 2025,cb-satisfaction,CB Satisfaction,Certification Body satisfaction with ease of use,Tech & Data,3.8,4.0,/5,rating,stable
-Mar 2025,employee-satisfaction,Employee Satisfaction,Employee satisfaction with IT ease of use,Tech & Data,3.6,4.0,/5,rating,up
-Mar 2025,ai-helpdesk,AI Helpdesk Automation,Percentage of helpdesk cases handled by AI,Tech & Data,2,10,%,percentage,stable
-Mar 2025,fsa-certificates,FSA Certificates Growth,Growth in FSA certificates compared to December 2024,Markets,1250,4071,,number,up
-Mar 2025,fra-certificates,FRA Certificates Growth,Growth in FRA certificates compared to December 2024,Sustainability,620,1850,,number,up
-Mar 2025,engagement-score,Engagement Score,Employee engagement via engagement survey,Culture,3.9,4.0,/5,rating,up
+﻿id;date;name;description;category;currentValue;targetValue;unit;type;trend
+data-accuracy;Jan 2026;NPS Partners;Percentage of correct data in our systems;MARKETS;7.5;8;/>8;rating;stable
+nps-customers;Jan 2026;NPS Customers;Percentage of data entered automatically;MARKETS;6.5;8;/>8;rating;stable
+employee-satisfaction;Jan 2026;Employee Satisfaction;Employee satisfaction with IT ease of use;CULTURE;2.9;4;/5;rating;stable
+revenue;Jan 2026;Revenue;How much money;MONEY;6.8;7.84; mio;number;stable
+yearly-investments;Jan 2026;Yearly investments;;MONEY;0.9;1.5; mio;number;stable
+gross-profit;Jan 2026;Gross profit;;MONEY;65;76;%;percentage;stable
+liquidity;Jan 2026;Liquidity;;MONEY;7.3;8.5; ton;number;stable
+fra-certificates;Jan 2026;FRA Certificates Growth;Growth in FRA certificates vs December 2024;Sustainability;225;1850;;number;stable
+fsa-certificates;Jan 2026;FSA Certificates Growth;Growth in FSA certificates vs December 2024;Markets;851;4071;;number;up
+data-accuracy;Feb 2026;NPS Partners;Percentage of correct data in our systems;MARKETS;7.5;8;/>8;rating;stable
+nps-customers;Feb 2026;NPS Customers;Percentage of data entered automatically;MARKETS;6.5;8;/>8;rating;stable
+employee-satisfaction;Feb 2026;Employee Satisfaction;Employee satisfaction with IT ease of use;CULTURE;2.9;4;/5;rating;stable
+revenue;Feb 2026;Revenue;How much money;MONEY;6.8;7.84; mio;number;stable
+yearly-investments;Feb 2026;Yearly investments;;MONEY;0.9;1.5; mio;number;stable
+gross-profit;Feb 2026;Gross profit;;MONEY;65;76;%;percentage;stable
+liquidity;Feb 2026;Liquidity;;MONEY;7.3;8.5; ton;number;stable
+fra-certificates;Feb 2026;FRA Certificates Growth;Growth in FRA certificates vs December 2024;Sustainability;225;1850;;number;stable
+fsa-certificates;Feb 2026;FSA Certificates Growth;Growth in FSA certificates vs December 2024;Markets;851;4071;;number;up
+data-accuracy;Mar 2026;NPS Partners;Percentage of correct data in our systems;MARKETS;7.5;8;/>8;rating;stable
+nps-customers;Mar 2026;NPS Customers;Percentage of data entered automatically;MARKETS;6.5;8;/>8;rating;stable
+employee-satisfaction;Mar 2026;Employee Satisfaction;Employee satisfaction with IT ease of use;CULTURE;2.9;4;/5;rating;stable
+revenue;Mar 2026;Revenue;How much money;MONEY;6.8;7.84; mio;number;stable
+yearly-investments;Mar 2026;Yearly investments;;MONEY;0.9;1.5; mio;number;stable
+gross-profit;Mar 2026;Gross profit;;MONEY;65;76;%;percentage;stable
+liquidity;Mar 2026;Liquidity;;MONEY;7.3;8.5; ton;number;stable
+fra-certificates;Mar 2026;FRA Certificates Growth;Growth in FRA certificates vs December 2024;Sustainability;225;1850;;number;stable
+fsa-certificates;Mar 2026;FSA Certificates Growth;Growth in FSA certificates vs December 2024;Markets;851;4071;;number;up
