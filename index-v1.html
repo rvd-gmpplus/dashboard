@@ -494,7 +494,8 @@
         <select id="version-select" onchange="switchVersion(this.value)">
             <option value="v1" selected>V1 - Classic</option>
             <option value="v2">V2 - Historic Data</option>
-            <option value="v21">V2.1 - Excel Template</option>
+            <option value="v21">V2.1 - Excel</option>
+            <option value="v22">V2.2 - Topics</option>
         </select>
     </div>
 
@@ -565,7 +566,8 @@
         const pages = {
             'v1': 'index-v1.html',
             'v2': 'index-v2.html',
-            'v21': 'index-v21.html'
+            'v21': 'index-v21.html',
+            'v22': 'index-v22.html'
         };
         if (pages[version]) {
             window.location.href = pages[version];
